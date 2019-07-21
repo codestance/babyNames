@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Baby Names in Poland</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.css>
+
+<body>
+  <div id="wrapper"></div>
+  <script>
+    //   let w = 500;
+    //   let h = 200;
+    //   d3.select('.wrapper')
+    //   .append('svg')
+    //   .attr('width', w)
+    //   .attr('height', h);
+    // years=['x',2013,2014,2015,2016,2017,2018]
+    // columns = [years,['imie',0.13,0.14,0.15,.16,.17,.18]]
+      d3.csv('names.csv')
+        .then(function(data){
+            console.log(data)
+            // data.forEach(function(d){
+                // console.log(d, d.name, d['2013'])
+                d=data[0]
+                c3.generate({
+                    bindto: '#wrapper',
+                    data: {
+                        rows:[[d.name],[d['2013']],[d['2014']],[d['2015']],[d['2016']],[d['2017']],[d['2018']]],
+                        axis: {
+                            x: {
+                                tick:{
+                                    values:['2013','2014','2015','2016','2017','2018']
+                                }
+                            }
+                        },
+                        type: 'spline'
+                    },
+                    point: {
+                        show: false
+                    }
+                });
+            // })
+        })
+        .catch(function(error){
+            // handle error
+            console.log('an error ocured', error)
+        })
+  </script>
+</body>
+</html>
