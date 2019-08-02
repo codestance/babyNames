@@ -31,21 +31,38 @@
   </div>
   <script>
       var chart;
-      let years = ['x']; for(i=2013;i<=2019;i++) years.push(i)
+      var data;
+      let years = []; for(i=2013;i<=2018;i++) years.push(i)
+      let yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
       function addOption(name){
         let ifSelected= '';
         let opt = `<option id="${name}" value="${name}" >${name}</option>`;
         document.getElementById('selectNames').insertAdjacentHTML('beforeend',opt);
       }
-      function addName(name, data){chart.load({columns:[years,[name, data]]})}
-      function delname(name){chart.unload({ids: name})}
+      function getNameData(name){
+         let result = [name];
+         let choice= data.filter(a=>a.name===name)
+         if(choice.length === 1){
+             choice=choice[0]
+            //  console.log(choice)
+             for(year of years){
+                //  console.log(choice[year])
+                result.push(choice[year])
+             }
+         }
+         return result
+      }
+      function addName(name){chart.load({columns:[yearsColumn, getNameData(name)]})}
+      function delName(name){chart.unload({ids: name})}
     // years=['x',2013,2014,2015,2016,2017,2018]
     // columns = [years,['imie',0.13,0.14,0.15,.16,.17,.18]]
-    // wyjac data do globala, funkcja zwracajaca wartosci wg lat dla daneggo imienia
+    
       d3.csv('names.csv')
-        .then(function(data){
+        .then(function(dat){
             // console.log(data[0])
-            data.forEach(function(d){
+            data=dat;
+            console.log('data',data)
+            dat.forEach(function(d){
                 // console.log(d)
                 addOption(d.name)
                 // d=data[0]
@@ -54,7 +71,7 @@
                     bindto: '#chart',
                     data: {
                         x: 'x',
-                        columns:[years,
+                        columns:[yearsColumn,
                             [[d.name],[d['2013']],[d['2014']],[d['2015']],[d['2016']],[d['2017']],[d['2018']]]],
                         axis: {
                             x: {
@@ -77,12 +94,12 @@
         $(document).ready(function(){
             $(function(){
                 $(".chosen-select").on('change', function(e,param){
-                    let name = param.selected
-                    addName(name,[61,52,93,49,83,69])
+                    if(param.selected) addName(param.selected)
+                    if(param.deselected) delName(param.deselected)
                 })
                 $(".chosen-select").chosen({
                     width: "99%",
-                    max_selected_options: 5,
+                    max_selected_options: 10,
                     no_results_text: "Ups..., nie  ma takiego imienia"
                 });
             });
