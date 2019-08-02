@@ -28,7 +28,19 @@
       <br/>
       <br/>
       <div id="chart"></div>
-      
+      <br/>
+      <br/>
+      <h4>Jak używać</h4>
+      <p>
+        Zacznij wpisywać imie w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij Enter.
+        Możesz porównywać maksymalnie do ośmiu imon na raz.
+      </p>
+      <br/>
+      <h4>O danych</h4>
+      <p>
+        Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2018.
+        Pochodzą ze strony https://dane.gov.pl/dataset. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
+      </p>
   </div>
   <script>
       var chart;
@@ -55,20 +67,11 @@
       }
       function addName(name){chart.load({columns:[yearsColumn, getNameData(name)]})}
       function delName(name){chart.unload({ids: name})}
-    // years=['x',2013,2014,2015,2016,2017,2018]
-    // columns = [years,['imie',0.13,0.14,0.15,.16,.17,.18]]
     
       d3.csv('names.csv')
         .then(function(dat){
-            // console.log(data[0])
             data=dat;
-            // console.log('data',data)
             dat.map(d=>addOption(d.name))
-            // dat.forEach(function(d){
-                // console.log(d)
-                // addOption(d.name) })
-                // d=data[0]
-                // setTimeout(function () {
             chart=c3.generate({
                 bindto: '#chart',
                 data: {
@@ -90,7 +93,6 @@
                     show: true
                 }
             });
-                // }, 3000);
             
         })
         .catch(function(error){
