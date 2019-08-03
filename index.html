@@ -4,22 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Baby Names in Poland</title>
+    <title>Imiona dzieci w Polsce</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
     <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.css>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
-    <!-- <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/css/bootstrap-select.min.css"> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js"></script> -->
     <link rel="stylesheet" href="chosen.min.css">
     <script src="chosen.jquery.min.js"></script>
-
 </head>
 <body>
-  <h1 class="text-center">Imiona dzieci w Polsce</h1>
+  <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
   <div class="wrapper px-md-4 px-1 py-2">
       <div class="btn-group w-100" role="group">
           <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple tabindex="-1">
@@ -32,23 +27,25 @@
       <br/>
       <h4>Jak używać</h4>
       <p>
-        Zacznij wpisywać imie w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij Enter.
+        Zacznij wpisywać imię w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij <em>Enter</em>.
         Możesz porównywać maksymalnie do ośmiu imon na raz.
+        Osobno przedstwione są różne pisownie i warianty, np. Alex, Aleks. Jeśli imię nadawane było chłopcom i dziewczynkom w nawiasie podana jest płeć, np Alex (K), Alex (M).
       </p>
       <br/>
       <h4>O danych</h4>
       <p>
         Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2018.
-        Pochodzą ze strony https://dane.gov.pl/dataset. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
+        Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
+        <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera.
+        Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2018 nazwano aż 258490 dzieci, z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 238608 razy.
       </p>
   </div>
   <script>
       var chart;
       var data;
-      let years = []; for(i=2013;i<=2018;i++) years.push(i)
+      let years = []; for(i=2000;i<=2018;i++) years.push(i)
       let yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
       function addOption(name){
-        let ifSelected= '';
         let opt = `<option id="${name}" value="${name}" >${name}</option>`;
         document.getElementById('selectNames').insertAdjacentHTML('beforeend',opt);
       }
@@ -57,9 +54,7 @@
          let choice= data.filter(a=>a.name===name)
          if(choice.length === 1){
              choice=choice[0]
-            //  console.log(choice)
              for(year of years){
-                //  console.log(choice[year])
                 result.push(choice[year])
              }
          }
@@ -96,8 +91,7 @@
             
         })
         .catch(function(error){
-            // handle error
-            console.log('an error ocured', error)
+            alert('Wystąpił błąd', error)
         })
         $(document).ready(function(){
             $(function(){
@@ -112,7 +106,6 @@
                 });
             });
         })
-        
   </script>
 </body>
 </html>
