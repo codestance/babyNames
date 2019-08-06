@@ -1,111 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Imiona dzieci w Polsce</title>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
     <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.css>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="chosen.min.css">
-    <script src="chosen.jquery.min.js"></script>
 </head>
 <body>
-  <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
-  <div class="wrapper px-md-4 px-1 py-2">
-      <div class="btn-group w-100" role="group">
-          <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple tabindex="-1">
-          </select>
-      </div>
-      <br/>
-      <br/>
-      <div id="chart"></div>
-      <br/>
-      <br/>
-      <h4>Jak używać</h4>
-      <p>
-        Zacznij wpisywać imię w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij <em>Enter</em>.
-        Możesz porównywać maksymalnie do ośmiu imon na raz.
-        Osobno przedstwione są różne pisownie i warianty, np. Alex, Aleks. Jeśli imię nadawane było chłopcom i dziewczynkom w nawiasie podana jest płeć, np Alex (K), Alex (M).
-      </p>
-      <br/>
-      <h4>O danych</h4>
-      <p>
-        Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2018.
-        Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
-        <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera.
-        Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2018 nazwano aż 258490 dzieci, z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 238608 razy.
-      </p>
-  </div>
-  <script>
-      var chart;
-      var data;
-      let years = []; for(i=2000;i<=2018;i++) years.push(i)
-      let yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
-      function addOption(name){
-        let opt = `<option id="${name}" value="${name}" >${name}</option>`;
-        document.getElementById('selectNames').insertAdjacentHTML('beforeend',opt);
-      }
-      function getNameData(name){
-         let result = [name];
-         let choice= data.filter(a=>a.name===name)
-         if(choice.length === 1){
-             choice=choice[0]
-             for(year of years){
-                result.push(choice[year])
-             }
-         }
-         return result
-      }
-      function addName(name){chart.load({columns:[yearsColumn, getNameData(name)]})}
-      function delName(name){chart.unload({ids: name})}
-    
-      d3.csv('names.csv')
-        .then(function(dat){
-            data=dat;
-            dat.map(d=>addOption(d.name))
-            chart=c3.generate({
-                bindto: '#chart',
+    <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
+    <div class="wrapper px-md-4 px-1 py-2">
+        <div class="btn-group w-100" role="group">
+            <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple tabindex="-1">
+            </select>
+        </div>
+        <br/>
+        <br/>
+        <div id="chart"></div>
+        <br/>
+        <br/>
+        <h4>Jak używać</h4>
+        <p>
+            Zacznij wpisywać imię w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij <em>Enter</em>.
+            Możesz porównywać maksymalnie do ośmiu imon na raz.
+            Osobno przedstwione są różne pisownie i warianty, np. Alex, Aleks. Jeśli imię nadawane było chłopcom i dziewczynkom w nawiasie podana jest płeć, np Alex (K), Alex (M).
+        </p>
+        <br/>
+        <h4>O danych</h4>
+        <p>
+            Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2018.
+            Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
+            <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera.
+            Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2018 nazwano aż 258490 dzieci, z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 238608 razy.
+        </p>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="chosen.jquery.min.js">
+    AbstractChosen.browser_is_supported = function() {
+    if (window.navigator.appName === "Microsoft Internet Explorer") {
+        return document.documentMode >= 8;
+    }
+    if (/iP(od|hone)/i.test(window.navigator.userAgent)) {
+        return false;
+    }
+    if (/Android/i.test(window.navigator.userAgent)) {
+        if (/Mobile/i.test(window.navigator.userAgent)) {
+        return false;
+        }
+    }
+    return true;
+    };  
+    </script>
+    <script>
+        var chart, data;
+        let years = [];
+        for (i = 2e3; i <= 2018; i++)
+            years.push(i);
+        let yearsColumn = ["x"];
+        for (y of years)
+            yearsColumn.push(y);
+        function addOption(e) {
+            let t = `<option id="${e}" value="${e}" >${e}</option>`;
+            document.getElementById("selectNames").insertAdjacentHTML("beforeend", t)
+        }
+        function getNameData(e) {
+            let t = [e]
+                , a = data.filter(t=>t.name === e);
+            if (1 === a.length)
+                for (year of (a = a[0],
+                years))
+                    t.push(a[year]);
+            return t
+        }
+        function addName(e) {
+            chart.load({
+                columns: [yearsColumn, getNameData(e)]
+            })
+        }
+        function delName(e) {
+            chart.unload({
+                ids: e
+            })
+        }
+        d3.csv("names.csv").then(function(e) {
+            data = e,
+            e.map(e=>addOption(e.name)),
+            chart = c3.generate({
+                bindto: "#chart",
                 data: {
-                    x: 'x',
-                    columns:[],
+                    x: "x",
+                    columns: [],
                     empty: {
-   		                label: {
-                            text: 'Brak danych :(  Wybierz imię z listy'
+                        label: {
+                            text: "Brak danych :(  Wybierz imię z listy"
                         }
                     },
                     axis: {
                         x: {
-                            type:'timeseries'
+                            type: "timeseries"
                         }
                     },
-                    type: 'spline'
+                    type: "spline"
                 },
                 point: {
-                    show: true
+                    show: !0
                 }
-            });
-            
-        })
-        .catch(function(error){
-            alert('Wystąpił błąd', error)
-        })
-        $(document).ready(function(){
-            $(function(){
-                $(".chosen-select").on('change', function(e,param){
-                    if(param.selected) addName(param.selected)
-                    if(param.deselected) delName(param.deselected)
-                })
-                $(".chosen-select").chosen({
-                    width: "99%",
-                    max_selected_options: 8,
-                    no_results_text: "Ups..., nie  ma takiego imienia"
-                });
-            });
-        })
-  </script>
+            })
+        }).then(function(){
+            $(".chosen-select").chosen({
+                width: "99%",
+                max_selected_options: 8,
+                no_results_text: "Ups..., nie  ma takiego imienia"
+            })
+        }).catch(function(e) {
+            alert("Wystąpił błąd", e)
+        }),
+        $(document).ready(function() {
+            $(".chosen-select").on("change", function(e, t) {
+                t.selected && addName(t.selected),
+                t.deselected && delName(t.deselected)
+            })
+            // $(".chosen-select").chosen({
+            //     width: "99%",
+            //     max_selected_options: 8,
+            //     no_results_text: "Ups..., nie  ma takiego imienia"
+            // })
+        });
+    </script>
 </body>
 </html>
