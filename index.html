@@ -56,80 +56,65 @@
     };  
     </script>
     <script>
-        var chart, data;
-        let years = [];
-        for (i = 2e3; i <= 2018; i++)
-            years.push(i);
-        let yearsColumn = ["x"];
-        for (y of years)
-            yearsColumn.push(y);
-        function addOption(e) {
-            let t = `<option id="${e}" value="${e}" >${e}</option>`;
-            document.getElementById("selectNames").insertAdjacentHTML("beforeend", t)
+    var chart,data;
+    let years = []; for(i=2000;i<=2018;i++) years.push(i)
+    let yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
+    function addOption(name){
+        let opt = `<option id="${name}" value="${name}" >${name}</option>`;
+        document.getElementById('selectNames').insertAdjacentHTML('beforeend',opt);
+    }
+    function getNameData(name){
+        let result = [name];
+        let choice= data.filter(a=>a.name===name)
+        if(choice.length === 1){
+            choice=choice[0]
+            for(year of years){
+            result.push(choice[year])
+            }
         }
-        function getNameData(e) {
-            let t = [e]
-                , a = data.filter(t=>t.name === e);
-            if (1 === a.length)
-                for (year of (a = a[0],
-                years))
-                    t.push(a[year]);
-            return t
-        }
-        function addName(e) {
-            chart.load({
-                columns: [yearsColumn, getNameData(e)]
-            })
-        }
-        function delName(e) {
-            chart.unload({
-                ids: e
-            })
-        }
-        d3.csv("names.csv").then(function(e) {
-            data = e,
-            e.map(e=>addOption(e.name)),
-            chart = c3.generate({
-                bindto: "#chart",
-                data: {
-                    x: "x",
-                    columns: [],
-                    empty: {
-                        label: {
-                            text: "Brak danych :(  Wybierz imię z listy"
-                        }
-                    },
-                    axis: {
-                        x: {
-                            type: "timeseries"
-                        }
-                    },
-                    type: "spline"
+        return result
+    }
+    function addName(name){chart.load({columns:[yearsColumn, getNameData(name)]})}
+    function delName(name){chart.unload({ids: name})}
+    d3.csv('names.csv').then(function(dat){
+        data=dat;
+        dat.map(d=>addOption(d.name))
+        chart=c3.generate({
+            bindto: '#chart',
+            data: {
+                x: 'x',
+                columns:[],
+                empty: {
+                    label: {
+                        text: 'Brak danych. Wybierz imię z listy'
+                    }
                 },
-                point: {
-                    show: !0
-                }
-            })
-        }).then(function(){
-            $(".chosen-select").chosen({
-                width: "99%",
-                max_selected_options: 8,
-                no_results_text: "Ups..., nie  ma takiego imienia"
-            })
-        }).catch(function(e) {
-            alert("Wystąpił błąd", e)
-        }),
-        $(document).ready(function() {
-            $(".chosen-select").on("change", function(e, t) {
-                t.selected && addName(t.selected),
-                t.deselected && delName(t.deselected)
-            })
-            // $(".chosen-select").chosen({
-            //     width: "99%",
-            //     max_selected_options: 8,
-            //     no_results_text: "Ups..., nie  ma takiego imienia"
-            // })
+                axis: {
+                    x: {
+                        type:'timeseries'
+                    }
+                },
+                type: 'spline'
+            },
+            point: {
+                show: true
+            }
+        }); 
+    }).then(function(){
+        $(".chosen-select").chosen({
+            width: "99%",
+            max_selected_options: 8,
+            no_results_text: "Ups..., nie  ma takiego imienia"
         });
+    }).catch(function(error){
+        alert('Wystąpił błąd', error)
+    })
+    $(document).ready(function(){
+        $(".chosen-select").on('change', function(e,param){
+            if(param.selected) addName(param.selected)
+            if(param.deselected) delName(param.deselected)
+        })
+    })
     </script>
 </body>
 </html>
