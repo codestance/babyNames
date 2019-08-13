@@ -1,1 +1,1 @@
-Imiona nadawane w Polsce w latach 2000 - 2018 przedstawione na wykresach.
+Babies given names in Poland the last 18 years.
