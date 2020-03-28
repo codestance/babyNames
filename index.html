@@ -7,7 +7,6 @@
     <title>Imiona dzieci w Polsce</title>
     <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.css>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="chosen.min.css"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -31,10 +30,10 @@
         <br/>
         <h4>O danych</h4>
         <p>
-            Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2018.
+            Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2019.
             Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
             <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera.
-            Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2018 nazwano aż 258490 dzieci, z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 238608 razy.
+            Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2019 nazwano aż 266456 dzieci, z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 246797 razy.
         </p>
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -43,7 +42,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
     <script>
     var chart,data;
-    let years = []; for(i=2000;i<=2018;i++) years.push(i)
+    let years = []; for(i=2000;i<=2019;i++) years.push(i)
     let yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
     function addOption(name){
         let opt = `<option id="${name}" value="${name}" >${name}</option>`;
@@ -96,10 +95,6 @@
     $(document).ready(function(){
         $(".chosen-select").on("select2:select", function(e){
             let el = e.params.data.text;
-            // let $el = $(el);
-            // $el.detach();
-            // $(this).append($el);
-            // $(this).trigger("change");
             addName(el)
         })
         $(".chosen-select").on("select2:unselect", function(e){
