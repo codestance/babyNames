@@ -8,33 +8,42 @@
     <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.css>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .c3-line{
+            stroke-width: 2px;
+        }
+    </style>
 </head>
 <body>
     <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
     <div class="wrapper px-md-4 px-1 py-2">
-        <div class="btn-group w-100" role="group">
-            <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple="multiple" tabindex="-1">
-            </select>
-        </div>
         <br/>
+        <h2>O danych</h2>
+        <p>
+            Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2020.
+            Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
+            <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera, w której dużą popularnością cieszył się Klaudiusz Sevković.
+            <br/>Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2020 nazwano aż 266456 dzieci, z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 246797 razy.
+        </p>
         <br/>
-        <div id="chart"></div>
+        <div id="births"></div>
         <br/>
-        <br/>
-        <h4>Jak używać</h4>
+        <h2>Jak używać</h2>
         <p>
             Zacznij wpisywać imię w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij <em>Enter</em>.
             Możesz porównywać maksymalnie do ośmiu imon na raz.
             Osobno przedstwione są różne pisownie i warianty, np. Alex, Aleks. Jeśli imię nadawane było chłopcom i dziewczynkom w nawiasie podana jest płeć, np Alex (K), Alex (M).
         </p>
         <br/>
-        <h4>O danych</h4>
-        <p>
-            Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2019.
-            Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
-            <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera.
-            Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2019 nazwano aż 266456 dzieci, z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 246797 razy.
-        </p>
+        <div class="btn-group w-100" role="group">
+            <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple="multiple" tabindex="-1">
+            </select>
+        </div>
+        <br/>
+        <div id="names"></div>
+        <br/>
+        <br/>
+        
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
@@ -65,7 +74,7 @@
         data=dat;
         dat.map(d=>addOption(d.name))
         chart=c3.generate({
-            bindto: '#chart',
+            bindto: '#names',
             data: {
                 x: 'x',
                 columns:[],
@@ -101,6 +110,38 @@
             delName(e.params.data.text)
         })
     })
+
+    
+    c3.generate({
+        bindto: '#births',
+        data: {
+            x: 'year',
+            url: 'births.csv',
+            type: 'bar',
+            types: {
+                sum: 'line'
+            },
+            groups: [
+                ['M', 'W']
+            ],
+            order: null,
+            names: {
+                M: 'chłopcy',
+                W: 'dziewczynki',
+                sum: 'suma'
+            }
+        },
+        axis: {
+            y: {
+                max: 420000,
+                tick: {
+                    values: [100000, 200000, 300000, 400000],
+                    format: d3.format("~s")
+                }
+            }
+        }
+    })
+
     </script>
 </body>
 </html>
