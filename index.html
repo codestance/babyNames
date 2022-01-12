@@ -14,7 +14,7 @@
         }
     </style>
 </head>
-<body>
+<body class="container-fluid">
     <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
     <div class="wrapper px-md-4 px-1 py-2">
         <br/>
@@ -27,6 +27,9 @@
             Z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 254148 razy, czyli nazwano tak 6,19% wszystkich dziewczynek urodzonych w ostatnich dwudziestu latach.
         </p>
         <br/>
+        <a href="#names">Przejdź do wykresu popularnośći</a>
+        <br/>
+        <br/>
         <h2>Liczba urodzeń</h2>
         <p>
             Ogólna liczba urodzeń zmniejszyła się z 724 tys. w 1983 roku do 355 tys. w roku 2003, przy czym
@@ -36,7 +39,7 @@
             356 tys. w 2020 roku. Tendencję zakłócił wzrost liczby urodzeń w latach: 2014 (o blisko 6 tys. w stosunku do roku poprzedniego), 2016 (o prawie 13 tys.) i 2017 (o blisko 20 tys.).
             <br/>Na znaczący spadek liczby urodzeń po 2009 roku wpływał przede wszystkim spadek liczby urodzeń pierwszego dziecka, zaś chwilowy wzrost
             liczby urodzeń w roku 2014 oraz w latach 2016–2017 wynikał z większej liczby urodzeń drugiego i kolejnego dziecka.(1)
-            <br/>Jak wynika z rządowego dokumentu(2) współczynnik dzietności jest ściśle powiązany ze stopą bezrobocia.
+            <br/>Jak wynika z rządowego dokumentu(2) współczynnik dzietności jest powiązany ze stopą bezrobocia.
             W 2003 roku, gdy nastąpił spadek urodzeń stopa bezrobocia wynosiła ~20%. Natomiast podczas wzrostu urodzeń w 2017 roku
             bezrobocie było najniższe od 1991 roku(3).
             <br/>Wzrost urodzeń w latach  2016-2017 mógł mieć również związek ze sztandarowym programem społecznym PiS - czyli 500 plus,
@@ -74,14 +77,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
     <script>
     var chart,data;
-    let years = []; for(i=2000;i<=2019;i++) years.push(i)
-    let yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
+    const years = []; for(i=2000;i<=2020;i++) years.push(i)
+    const yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
     function addOption(name){
-        let opt = `<option id="${name}" value="${name}" >${name}</option>`;
+        const opt = `<option id="${name}" value="${name}" >${name}</option>`;
         document.getElementById('selectNames').insertAdjacentHTML('beforeend',opt);
     }
     function getNameData(name){
-        let result = [name];
+        const result = [name];
         let choice= data.filter(a=>a.name===name)
         if(choice.length === 1){
             choice=choice[0]
@@ -93,7 +96,7 @@
     }
     function addName(name){chart.load({columns:[yearsColumn, getNameData(name)]})}
     function delName(name){chart.unload({ids: name})}
-    d3.csv('names.csv').then(function(dat){
+    d3.csv('https://gist.githubusercontent.com/codestance/f9a514f4dcad8ab1e981aa322deb885f/raw/7e8b4d14df60fa493081a5155edbaa5061dbf8dd/names-given-in-poland-till-2020').then(function(dat){
         data=dat;
         dat.map(d=>addOption(d.name))
         chart=c3.generate({
@@ -106,12 +109,20 @@
                         text: 'Brak danych. Wybierz imię z listy'
                     }
                 },
-                axis: {
-                    x: {
-                        type:'timeseries'
+                type: 'line'
+            },
+            axis: {
+                y: {
+                    min: 0,
+                    padding: {
+                        left: 0,
+                        right: 0
+                    },
+                    label: {
+                        text: '% urodzeń',
+                        position: 'outer-middle'
                     }
-                },
-                type: 'spline'
+                }
             },
             point: {
                 show: true
@@ -134,7 +145,6 @@
         })
     })
 
-    
     c3.generate({
         bindto: '#births',
         data: {
@@ -164,23 +174,11 @@
             }
         }
     })
-
-    c3.generate({
-        bindto: "namesNew",
-        data: {
-            xs: ['name', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011',
-                '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
-            url: "https://gist.githubusercontent.com/codestance/f9a514f4dcad8ab1e981aa322deb885f/raw/7e8b4d14df60fa493081a5155edbaa5061dbf8dd/names-given-in-poland-till-2020",
-            type: 'line'
-        }
-    })
-    // x: ['name', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011',
-    //             '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
     </script>
 </body>
 <footer>
     <ol>
-        <li><a href="https://www.batory.org.pl/wp-content/uploads/2021/09/I.E.Kotowska_Zmiany.demograficzne.w.Polsce.pdf"><i>Zmiany demograficzne w Polsce</i> I.E. Kotowska</a></li>
+        <li><a href="https://www.batory.org.pl/wp-content/uploads/2021/09/I.E.Kotowska_Zmiany.demograficzne.w.Polsce.pdf"><cite>Zmiany demograficzne w Polsce</cite> I.E. Kotowska</a></li>
         <li><a href="https://legislacja.rcl.gov.pl/docs//2/12279566/12326824/12326825/dokument206588.pdf">Rządowe uzasadnienie programu 500 plus</a></li>
         <li><a href="https://stat.gov.pl/obszary-tematyczne/rynek-pracy/bezrobocie-rejestrowane/stopa-bezrobocia-rejestrowanego-w-latach-1990-2021,4,1.html">Stopa bezrobocia w latach 1990 - 2021</a></li>
     </ol>
