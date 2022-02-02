@@ -69,7 +69,9 @@
         <div id="names"></div>
         <!-- <div id="namesNew"></div> -->
         <br/>
-        <br/>        
+        <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>  
+        <div id="raceW"></div>   
+        
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
@@ -197,6 +199,93 @@
             }
         }
     })
+
+    function rank(data){
+        data.sort((a, b) => d3.descending(a.value, b.value));
+        return data
+    }
+    d3.csv('https://raw.githubusercontent.com/codestance/babyNames/dev/raceM.csv').then(function(dat){
+        console.log(dat)
+        let names = dat.map(d => d['imię'])
+        names.unshift('x')
+        console.log(names)
+        // let reformDat = dat.map(obj =>{
+        //     console.log(obj)
+        //     console.log(obj["2000"])
+        //     let rDat = {}
+        //     if (+obj["2000"] !== 0 ){
+        //         console.log('jest różne od zera, czyli ', obj["2000"])
+        //         rDat["2000"] = [obj["2000"]]
+        //     }
+        //     return rDat
+        // })
+        // console.log('reformDat', reformDat)
+        function filterData(year){
+            let filtered = dat.filter(obj => +obj[year]!==0)
+            filtered.reduce(function(acc, obj){
+                let key = obj[year]
+                console.log(key)
+                if (!acc[key]) {
+                    acc[key] = []
+                }
+                acc[key].push(obj)
+                return acc
+            })
+            // return filtered
+        }
+        
+        console.log('filtered',filterData(2000))
+
+
+        function valuesInYear(year){
+            let temp = dat.map(d => +d[year])
+            temp.unshift('value')
+            return temp
+        }
+        // let inZeroZero = valuesInYear('2000')
+        // inZeroZero.unshift('value')
+        // console.log(inZeroZero)
+       console.log(valuesInYear(2000))
+        let raceChart = c3.generate({
+        bindto: '#raceW',
+        data: {
+            x: 'x',
+            xFormat: '%Y',
+            columns: [
+                names,
+                valuesInYear(2000)
+            ],
+            type: 'bar'
+        },
+        order: 'desc',
+        axis: {
+            rotated: true,
+            x: {
+                type: 'category',
+            }
+        }
+    });
+    setTimeout(function(){
+        raceChart.load({
+            columns: [
+                valuesInYear(2001)
+            ],
+        })
+    },5000)
+
+    })
+    
+
+
+
+    // setTimeout(function () {
+    //     race.load({
+    //         columns: [
+    //             ['value', 11000, 250, 200]
+    //         ]
+    //     });
+    // }, 10000);
+    
     </script>
 </body>
 <footer>
