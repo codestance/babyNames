@@ -70,7 +70,9 @@
         <!-- <div id="namesNew"></div> -->
         <br/>
         <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>  
-        <div id="raceW"></div>   
+        <div id="raceW">
+            <span id="year"></span>
+        </div>   
         
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -148,28 +150,29 @@
         })
     })
 
-    c3.generate({
-        bindto: '#namesNew',
-        data: {
-            x: 'name',
-            xFormat: '%Y',
-            columns: [['name','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'],
-                ['JAKUB',7.349072051,9.696426618,9.717660383,8.967060557,8.791191153,8.195207966,7.846769856,7.604767252,6.966773376,6.382508738,6.002904631,5.855582945,5.549923387,5.238200796,4.840549122,4.370972261,4.336138056,4.222377331,4.306523116,4.000321392,3.838362184],
-                ['JULIA',5.38307809,6.784997939,6.761774589,6.98353401,7.791083783,7.772292368,7.520597363,7.664508955,8.031592747,7.283529942,7.131775071,6.7657978,7.006591208,5.737263235,4.831635434,4.62043389,4.483998703,4.634105525,4.347714472,4.342983819,4.157123549],
-                ['KACPER',4.510729331,4.464253153,5.419194779,6.470540076,6.849542276,6.489472046,6.23219586,5.754295906,5.125589249,4.481096322,3.864991343,3.701305609,4.267640646,4.170321039,3.7488347,3.261132825,2.92678836,2.741644533,2.628487447,2.455130716,2.297014845]
-            ],
-            type: 'line',
-            order: null
-        },
-        axis: {
-            x: {
-                type: 'timeseries',
-                tick: {
-                    format: '%Y'
-                }
-            }
-        }
-    })
+    // c3.generate({
+    //     bindto: '#namesNew',
+    //     data: {
+    //         x: 'name',
+    //         xFormat: '%Y',
+    //         columns: [['name','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'],
+    //             ['JAKUB',7.349072051,9.696426618,9.717660383,8.967060557,8.791191153,8.195207966,7.846769856,7.604767252,6.966773376,6.382508738,6.002904631,5.855582945,5.549923387,5.238200796,4.840549122,4.370972261,4.336138056,4.222377331,4.306523116,4.000321392,3.838362184],
+    //             ['JULIA',5.38307809,6.784997939,6.761774589,6.98353401,7.791083783,7.772292368,7.520597363,7.664508955,8.031592747,7.283529942,7.131775071,6.7657978,7.006591208,5.737263235,4.831635434,4.62043389,4.483998703,4.634105525,4.347714472,4.342983819,4.157123549],
+    //             ['KACPER',4.510729331,4.464253153,5.419194779,6.470540076,6.849542276,6.489472046,6.23219586,5.754295906,5.125589249,4.481096322,3.864991343,3.701305609,4.267640646,4.170321039,3.7488347,3.261132825,2.92678836,2.741644533,2.628487447,2.455130716,2.297014845]
+    //         ],
+    //         type: 'line',
+    //         order: null
+    //     },
+    //     axis: {
+    //         x: {
+    //             type: 'timeseries',
+    //             tick: {
+    //                 format: '%Y'
+    //             }
+    //         }
+    //     }
+    // })
+
     c3.generate({
         bindto: '#births',
         data: {
@@ -200,59 +203,34 @@
         }
     })
 
-    function rank(data){
-        data.sort((a, b) => d3.descending(a.value, b.value));
-        return data
-    }
-    d3.csv('https://raw.githubusercontent.com/codestance/babyNames/dev/raceM.csv').then(function(dat){
-        console.log(dat)
-        let names = dat.map(d => d['imię'])
-        names.unshift('x')
-        console.log(names)
-        // let reformDat = dat.map(obj =>{
-        //     console.log(obj)
-        //     console.log(obj["2000"])
-        //     let rDat = {}
-        //     if (+obj["2000"] !== 0 ){
-        //         console.log('jest różne od zera, czyli ', obj["2000"])
-        //         rDat["2000"] = [obj["2000"]]
-        //     }
-        //     return rDat
-        // })
-        // console.log('reformDat', reformDat)
+    d3.csv('https://raw.githubusercontent.com/codestance/babyNames/dev/raceW.csv').then(function(dat){
+        // console.log(dat)        
         function filterData(year){
             let filtered = dat.filter(obj => +obj[year]!==0)
-            filtered.reduce(function(acc, obj){
-                let key = obj[year]
-                console.log(key)
-                if (!acc[key]) {
-                    acc[key] = []
-                }
-                acc[key].push(obj)
-                return acc
-            })
-            // return filtered
+            filtered.sort((a, b) => b[year] - a[year]);
+            return filtered
         }
         
-        console.log('filtered',filterData(2000))
-
+        function namesInYear(year){
+            let names = filterData(year).map(entry => entry['name'])
+            names.unshift('x')
+            return names
+        }
+        // console.log('filtered',filterData(2000))
 
         function valuesInYear(year){
-            let temp = dat.map(d => +d[year])
-            temp.unshift('value')
-            return temp
+            let datValues = filterData(year).map(d => +d[year])
+            datValues.unshift('value')
+            return datValues
         }
-        // let inZeroZero = valuesInYear('2000')
-        // inZeroZero.unshift('value')
-        // console.log(inZeroZero)
-       console.log(valuesInYear(2000))
+
         let raceChart = c3.generate({
         bindto: '#raceW',
         data: {
             x: 'x',
             xFormat: '%Y',
             columns: [
-                names,
+                namesInYear(2000),
                 valuesInYear(2000)
             ],
             type: 'bar'
@@ -265,9 +243,11 @@
             }
         }
     });
+    
     setTimeout(function(){
         raceChart.load({
             columns: [
+                namesInYear(2001),
                 valuesInYear(2001)
             ],
         })
