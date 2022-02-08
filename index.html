@@ -9,8 +9,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
     <style>
+        body{
+            font-size: 16px;
+        }
         .c3-line{
             stroke-width: 2px;
+        }
+        #raceW span{
+            position: absolute;
+            bottom: 1.5em;
+            right: 2em;
+            font-size: 3em;
+            font-weight: bolder;
+            color: lightslategray;
         }
     </style>
 </head>
@@ -70,8 +81,7 @@
         <!-- <div id="namesNew"></div> -->
         <br/>
         <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>  
-        <div id="raceW">
-            <span id="year"></span>
+        <div id="raceW" class="position-relative">
         </div>   
         
     </div>
@@ -204,7 +214,7 @@
     })
 
     d3.csv('https://raw.githubusercontent.com/codestance/babyNames/dev/raceW.csv').then(function(dat){
-        // console.log(dat)        
+       
         function filterData(year){
             let filtered = dat.filter(obj => +obj[year]!==0)
             filtered.sort((a, b) => b[year] - a[year]);
@@ -216,7 +226,6 @@
             names.unshift('x')
             return names
         }
-        // console.log('filtered',filterData(2000))
 
         function valuesInYear(year){
             let datValues = filterData(year).map(d => +d[year])
@@ -225,46 +234,63 @@
         }
 
         let raceChart = c3.generate({
-        bindto: '#raceW',
-        data: {
-            x: 'x',
-            xFormat: '%Y',
-            columns: [
-                namesInYear(2000),
-                valuesInYear(2000)
-            ],
-            type: 'bar'
-        },
-        order: 'desc',
-        axis: {
-            rotated: true,
-            x: {
-                type: 'category',
+            bindto: '#raceW',
+            data: {
+                x: 'x',
+                xFormat: '%Y',
+                columns: [
+                    namesInYear(2000),
+                    valuesInYear(2000)
+                ],
+                names: {
+                    value: 'liczba'
+                },
+                type: 'bar'
+            },
+            order: 'desc',
+            axis: {
+                rotated: true,
+                x: {
+                    type: 'category',
+                }
+            },
+            legend: {
+                show: false
             }
-        }
-    });
-    
-    setTimeout(function(){
-        raceChart.load({
-            columns: [
-                namesInYear(2001),
-                valuesInYear(2001)
-            ],
+        });
+        const raceChartDiv = document.getElementById('raceW')
+        const span = document.createElement('span')
+        raceChartDiv.appendChild(span)
+        index = 0
+        span.innerText=years[index]
+        const io = new IntersectionObserver((entry, observer) => {
+            entry = entry[0]
+            let animation
+            if (entry.intersectionRatio > 0) {
+                    animation = 
+                        setInterval(() => {
+                            index++
+                            if( index < years.length){
+                                raceChart.load({
+                                    columns: [
+                                        namesInYear(years[index]),
+                                        valuesInYear(years[index])
+                                    ]
+                                })
+                                span.innerText=years[index]
+                            }
+                            else{
+                                index = 0
+                            }
+                        },4000)
+                
+            } else {
+                clearInterval(animation)
+            }
         })
-    },5000)
+        io.observe(raceChartDiv)
 
     })
-    
-
-
-
-    // setTimeout(function () {
-    //     race.load({
-    //         columns: [
-    //             ['value', 11000, 250, 200]
-    //         ]
-    //     });
-    // }, 10000);
     
     </script>
 </body>
