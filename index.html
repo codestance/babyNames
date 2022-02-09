@@ -81,8 +81,10 @@
         <!-- <div id="namesNew"></div> -->
         <br/>
         <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>  
-        <div id="raceW" class="position-relative">
-        </div>   
+        <h4>Imiona dla chłopców</h4>
+        <div id="raceM" class="position-relative"></div>
+        <h4>Imiona dla dziewczynek</h4>
+        <div id="raceW" class="position-relative"></div>    
         
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -192,9 +194,9 @@
             types: {
                 sum: 'line'
             },
-            groups: [
-                ['M', 'W']
-            ],
+            // groups: [
+            //     ['M', 'W']
+            // ],
             order: null,
             names: {
                 M: 'chłopcy',
@@ -261,29 +263,39 @@
         const raceChartDiv = document.getElementById('raceW')
         const span = document.createElement('span')
         raceChartDiv.appendChild(span)
-        index = 0
+        let index = 0
         span.innerText=years[index]
+        // function loadYearData(i, arr){
+        //     if( i == arr.length){
+        //         i = 0
+        //     }
+        //     raceChart.load({
+        //         columns: [
+        //             namesInYear(arr[i]),
+        //             valuesInYear(arr[i])
+        //         ]
+        //     })
+        //     span.innerText=arr[i]
+        //     i++
+        // }
         const io = new IntersectionObserver((entry, observer) => {
             entry = entry[0]
             let animation
             if (entry.intersectionRatio > 0) {
                     animation = 
                         setInterval(() => {
-                            index++
-                            if( index < years.length){
-                                raceChart.load({
-                                    columns: [
-                                        namesInYear(years[index]),
-                                        valuesInYear(years[index])
-                                    ]
-                                })
-                                span.innerText=years[index]
-                            }
-                            else{
+                            if( index == years.length){
                                 index = 0
                             }
-                        },4000)
-                
+                            raceChart.load({
+                                columns: [
+                                    namesInYear(years[index]),
+                                    valuesInYear(years[index])
+                                ]
+                            })
+                            span.innerText=years[index]
+                            index++
+                        },5000)
             } else {
                 clearInterval(animation)
             }
@@ -291,10 +303,27 @@
         io.observe(raceChartDiv)
 
     })
+
+
+    // c3.generate({
+    //     bindto: '#raceM',
+    //     data: {
+    //         json: ['raceM.json'],
+    //         keys: {
+    //             x: 'name',
+    //             value: ["value"]
+    //         }
+    //     },
+    //     axis: {
+    //         x: {
+    //             type: 'category'
+    //         }
+    //     }
+    // })
     
     </script>
 </body>
-<footer>
+<footer class="py-2">
     <ol>
         <li><a href="https://www.batory.org.pl/wp-content/uploads/2021/09/I.E.Kotowska_Zmiany.demograficzne.w.Polsce.pdf"><cite>Zmiany demograficzne w Polsce</cite> I.E. Kotowska</a></li>
         <li><a href="https://legislacja.rcl.gov.pl/docs//2/12279566/12326824/12326825/dokument206588.pdf">Rządowe uzasadnienie programu 500 plus</a></li>
