@@ -1,0 +1,84 @@
+{
+    "2000": [
+        {
+            "name": "JAKUB",
+            "value": 14497,
+            "rank": 1      
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 11454,
+            "rank": 2
+        },
+        {
+            "name": "KACPER",
+            "value": 8898,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 8498,
+            "rank": 4
+        },
+        {
+            "name": "PATRYK",
+            "value": 7743,
+            "rank": 5
+        }
+
+    ],
+    "2001": [
+        {
+            "name": "JAKUB",
+            "value": 18612,
+            "rank": 1
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 9899,
+            "rank": 2
+        },
+        {
+            "name": "KACPER",
+            "value": 8569,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 8529,
+            "rank": 4
+        },
+        {
+            "name": "DAWID",
+            "value": 7203,
+            "rank": 5
+        }
+    ],
+    "2002": [
+        {
+            "name": "JAKUB",
+            "value": 18018,
+            "rank": 1
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 10177,
+            "rank": 2
+        },
+        {
+            "name": "KACPER",
+            "value": 10048,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 8362,
+            "rank": 4
+        },
+        {
+            "name": "DAWID",
+            "value": 7714,
+            "rank": 5
+        }
+    ]
+}
