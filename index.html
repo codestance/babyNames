@@ -23,11 +23,12 @@
             font-weight: bolder;
             color: lightslategray;
         }
+        
     </style>
 </head>
 <body class="container-fluid">
     <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
-    <div class="wrapper px-md-4 px-1 py-2">
+    <main class="wrapper px-md-4 px-1 py-2">
         <br/>
         <h2>O danych</h2>
         <p>
@@ -79,29 +80,41 @@
         <br/>
         <div id="names"></div>
         <!-- <div id="namesNew"></div> -->
-        <br/>
-        <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>
-        <p>10 nalpopularniejszych imion na przestrzeni lat z podziałem na płeć</p>  
-        <h4>Imiona dla chłopców</h4>
-        <p>Przez lata najpopularniejszym imieniem dla chłopców był Jakub z ogromną przewagą nad kolejnymi pozycjami.
-            W 2016 roku pierwsze miejsce zgarnął Antoni, a różnice pomiędzy kolejnymi pozycjami zaczęły się zmniejszać.
-            W 2020 Antoni wciąż utrzymuje się na prowadzeniu, a Jakub pierwszy raz spadł z podium popularności.
-        </p>
-        <div id="raceM" class="race position-relative"></div>
-        <button id="raceMstart">Start</button>
-        <button id="raceMstop">Stop</button>
-        <h4>Imiona dla dziewczynek</h4>
-        <div id="raceW" class="race position-relative"></div>    
-        
-    </div>
+        <section class="py-4">
+            <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>
+            <p>10 nalpopularniejszych imion na przestrzeni lat z podziałem na płeć</p>  
+            <h4>Imiona dla chłopców</h4>
+            <p>
+                Przez lata najpopularniejszym imieniem dla chłopców był Jakub z ogromną przewagą nad kolejnymi pozycjami.
+                W 2016 roku pierwsze miejsce zgarnął Antoni, a różnice pomiędzy kolejnymi pozycjami zaczęły się zmniejszać.
+                W 2020 Antoni wciąż utrzymuje się na prowadzeniu, a Jakub pierwszy raz spadł z podium popularności.
+            </p>
+            <div id="raceM" class="race position-relative"></div>
+            <button id="raceMstart" class="btn btn-success">Start</button>
+            <button id="raceMstop" class="btn btn-danger">Stop</button>
+        </section>
+        <section class="py-4">
+            <h4>Imiona dla dziewczynek</h4>
+            <p>
+                W roku 2000 najpopularniejszym imieniem dla dziewczynek była Natalia,
+                jednak już rok później na pierwsze miejsce wysunęła się Julia i nie oddała prowadzenia przez 12 lat.
+                W 2013 najpopularniejszym imieniem została Lena, ale już w 2015 pierwsze miejsce zgarnęła Zuzanna
+                i prowadzi do dziś, z wyjątkiem 2017 roku, w którym to do chwały wróciła Julia.
+            
+            </p>
+            <div id="raceW" class="race position-relative"></div>
+            <button id="raceWstart" class="btn btn-success">Start</button>
+            <button id="raceWstop" class="btn btn-danger">Stop</button> 
+        </section>        
+    </main>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
     <script>
     var chart,data;
-    const years = []; for(i=2000;i<=2020;i++) years.push(i)
-    const yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
+    const years = []; for(let i=2000;i<=2020;i++) years.push(i)
+    const yearsColumn = ['x']; for(let y of years) yearsColumn.push(y)
     function addOption(name){
         const opt = `<option id="${name}" value="${name}" >${name}</option>`;
         document.getElementById('selectNames').insertAdjacentHTML('beforeend',opt);
@@ -221,152 +234,11 @@
             }
         }
     })
-
-    d3.csv('https://raw.githubusercontent.com/codestance/babyNames/dev/raceW.csv').then(function(dat){
-       
-        function filterData(year){
-            let filtered = dat.filter(obj => +obj[year]!==0)
-            filtered.sort((a, b) => b[year] - a[year]);
-            return filtered
-        }
-        
-        function namesInYear(year){
-            let names = filterData(year).map(entry => entry['name'])
-            names.unshift('x')
-            return names
-        }
-
-        function valuesInYear(year){
-            let datValues = filterData(year).map(d => +d[year])
-            datValues.unshift('value')
-            return datValues
-        }
-
-        let raceChart = c3.generate({
-            bindto: '#raceW',
-            data: {
-                x: 'x',
-                xFormat: '%Y',
-                columns: [
-                    namesInYear(2000),
-                    valuesInYear(2000)
-                ],
-                names: {
-                    value: 'liczba'
-                },
-                type: 'bar'
-            },
-            order: 'desc',
-            axis: {
-                rotated: true,
-                x: {
-                    type: 'category',
-                }
-            },
-            legend: {
-                show: false
-            }
-        });
-        const raceChartDiv = document.getElementById('raceW')
-        const span = document.createElement('span')
-        raceChartDiv.appendChild(span)
-        let index = 0
-        span.innerText=years[index]
-        const io = new IntersectionObserver((entry, observer) => {
-            entry = entry[0]
-            let animation
-            if (entry.intersectionRatio > 0) {
-                    animation = 
-                        setInterval(() => {
-                            if( index == years.length){
-                                index = 0
-                            }
-                            raceChart.load({
-                                columns: [
-                                    namesInYear(years[index]),
-                                    valuesInYear(years[index])
-                                ]
-                            })
-                            span.innerText=years[index]
-                            index++
-                        },5000)
-            } else {
-                clearInterval(animation)
-            }
-        })
-        io.observe(raceChartDiv)
-
-    })
-
-    d3.json('raceM.json').then(function(dat){
-        let raceChartM = c3.generate({
-            bindto: '#raceM',
-            data: {
-                json: dat[2000],
-                keys: {
-                    x: 'name',
-                    value: ["value"]
-                },
-                type: 'bar'
-            },
-            axis: {
-                rotated: true,
-                x: {
-                    type: 'category'
-                }
-            },
-            legend: {
-                show: false
-            }
-        })
-        const raceChartDivM = document.getElementById('raceM')
-        const span = document.createElement('span')
-        raceChartDivM.appendChild(span)
-        let index = 0
-        span.innerText=years[index]
-
-        let traceYear = 2000
-        const lastYear = 2020
-        let animation
-        function changeYear(){
-            if(!animation){
-                animation = setInterval(() => {
-                    if( traceYear > lastYear){
-                        traceYear = 2000
-                    }
-                    raceChartM.load({
-                        json: dat[traceYear],
-                        keys: {
-                            x: 'name',
-                            value: ["value"]
-                        },
-                    })
-                    span.innerText=traceYear
-                    traceYear++
-                },5000)
-            }
-        }
-        function stopChangingYear(){
-            clearInterval(animation)
-            animation = null
-        }
-        
-        const io = new IntersectionObserver((entry, observer) => {
-            entry = entry[0]
-            if (entry.intersectionRatio > 0) {
-                changeYear()   
-            } else {
-                stopChangingYear()
-            }
-        })
-        io.observe(raceChartDivM)
-
-        document.getElementById("raceMstart").addEventListener("click", changeYear)
-        document.getElementById("raceMstop").addEventListener("click", stopChangingYear)
-    })
-    
-    
-    
+    </script>
+    <script type="module">
+        import {default as race} from '/race.js'
+        race('raceM', 2020)
+        race('raceW', 2020)
     </script>
 </body>
 <footer class="py-2">
