@@ -15,7 +15,7 @@
         .c3-line{
             stroke-width: 2px;
         }
-        #raceW span{
+        .race span{
             position: absolute;
             bottom: 1.5em;
             right: 2em;
@@ -80,11 +80,18 @@
         <div id="names"></div>
         <!-- <div id="namesNew"></div> -->
         <br/>
-        <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>  
+        <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>
+        <p>10 nalpopularniejszych imion na przestrzeni lat z podziałem na płeć</p>  
         <h4>Imiona dla chłopców</h4>
-        <div id="raceM" class="position-relative"></div>
+        <p>Przez lata najpopularniejszym imieniem dla chłopców był Jakub z ogromną przewagą nad kolejnymi pozycjami.
+            W 2016 roku pierwsze miejsce zgarnął Antoni, a różnice pomiędzy kolejnymi pozycjami zaczęły się zmniejszać.
+            W 2020 Antoni wciąż utrzymuje się na prowadzeniu, a Jakub pierwszy raz spadł z podium popularności.
+        </p>
+        <div id="raceM" class="race position-relative"></div>
+        <button id="raceMstart">Start</button>
+        <button id="raceMstop">Stop</button>
         <h4>Imiona dla dziewczynek</h4>
-        <div id="raceW" class="position-relative"></div>    
+        <div id="raceW" class="race position-relative"></div>    
         
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -265,19 +272,6 @@
         raceChartDiv.appendChild(span)
         let index = 0
         span.innerText=years[index]
-        // function loadYearData(i, arr){
-        //     if( i == arr.length){
-        //         i = 0
-        //     }
-        //     raceChart.load({
-        //         columns: [
-        //             namesInYear(arr[i]),
-        //             valuesInYear(arr[i])
-        //         ]
-        //     })
-        //     span.innerText=arr[i]
-        //     i++
-        // }
         const io = new IntersectionObserver((entry, observer) => {
             entry = entry[0]
             let animation
@@ -304,22 +298,74 @@
 
     })
 
+    d3.json('raceM.json').then(function(dat){
+        let raceChartM = c3.generate({
+            bindto: '#raceM',
+            data: {
+                json: dat[2000],
+                keys: {
+                    x: 'name',
+                    value: ["value"]
+                },
+                type: 'bar'
+            },
+            axis: {
+                rotated: true,
+                x: {
+                    type: 'category'
+                }
+            },
+            legend: {
+                show: false
+            }
+        })
+        const raceChartDivM = document.getElementById('raceM')
+        const span = document.createElement('span')
+        raceChartDivM.appendChild(span)
+        let index = 0
+        span.innerText=years[index]
 
-    // c3.generate({
-    //     bindto: '#raceM',
-    //     data: {
-    //         json: ['raceM.json'],
-    //         keys: {
-    //             x: 'name',
-    //             value: ["value"]
-    //         }
-    //     },
-    //     axis: {
-    //         x: {
-    //             type: 'category'
-    //         }
-    //     }
-    // })
+        let traceYear = 2000
+        const lastYear = 2020
+        let animation
+        function changeYear(){
+            if(!animation){
+                animation = setInterval(() => {
+                    if( traceYear > lastYear){
+                        traceYear = 2000
+                    }
+                    raceChartM.load({
+                        json: dat[traceYear],
+                        keys: {
+                            x: 'name',
+                            value: ["value"]
+                        },
+                    })
+                    span.innerText=traceYear
+                    traceYear++
+                },5000)
+            }
+        }
+        function stopChangingYear(){
+            clearInterval(animation)
+            animation = null
+        }
+        
+        const io = new IntersectionObserver((entry, observer) => {
+            entry = entry[0]
+            if (entry.intersectionRatio > 0) {
+                changeYear()   
+            } else {
+                stopChangingYear()
+            }
+        })
+        io.observe(raceChartDivM)
+
+        document.getElementById("raceMstart").addEventListener("click", changeYear)
+        document.getElementById("raceMstop").addEventListener("click", stopChangingYear)
+    })
+    
+    
     
     </script>
 </body>
