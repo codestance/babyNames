@@ -1,0 +1,1094 @@
+{
+    "2000": [
+        {
+            "name": "NATALIA",
+            "value": 11511,
+            "rank": 1      
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 10940,
+            "rank": 2
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 10144,
+            "rank": 3
+        },
+        {
+            "name": "JULIA",
+            "value": 10074,
+            "rank": 4
+        },
+        {
+            "name": "WERONIKA",
+            "value": 9680,
+            "rank": 5
+        },
+        {
+            "name": "KAROLINA",
+            "value": 7886,
+            "rank": 6      
+        },
+        {
+            "name": "KLAUDIA",
+            "value": 6992,
+            "rank": 7
+        },
+        {
+            "name": "PAULINA",
+            "value": 6245,
+            "rank": 8
+        },
+        {
+            "name": "PATRYCJA",
+            "value": 5841,
+            "rank": 9
+        },
+        {
+            "name": "KATARZYNA",
+            "value": 5793,
+            "rank": 10
+        }
+    ],
+    "2001": [
+        {
+            "name": "JULIA",
+            "value": 12347,
+            "rank": 1      
+        },
+        {
+            "name": "NATALIA",
+            "value": 11182,
+            "rank": 2
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 11172,
+            "rank": 3
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 10381,
+            "rank": 4
+        },
+        {
+            "name": "WERONIKA",
+            "value": 7415,
+            "rank": 5
+        },
+        {
+            "name": "KAROLINA",
+            "value": 6820,
+            "rank": 6      
+        },
+        {
+            "name": "KLAUDIA",
+            "value": 6693,
+            "rank": 7
+        },
+        {
+            "name": "PATRYCJA",
+            "value": 5831,
+            "rank": 8
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 5380,
+            "rank": 9
+        },
+        {
+            "name": "PAULINA",
+            "value": 5085,
+            "rank": 10
+        }
+    ],
+    "2002": [
+        {
+            "name": "JULIA",
+            "value": 11873,
+            "rank": 1      
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 11351,
+            "rank": 2
+        },
+        {
+            "name": "NATALIA",
+            "value": 9983,
+            "rank": 3
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 9179,
+            "rank": 4
+        },
+        {
+            "name": "WERONIKA",
+            "value": 6480,
+            "rank": 5
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 6211,
+            "rank": 6      
+        },
+        {
+            "name": "MARTYNA",
+            "value": 5935,
+            "rank": 7
+        },
+        {
+            "name": "KAROLINA",
+            "value": 5908,
+            "rank": 8
+        },
+        {
+            "name": "KLAUDIA",
+            "value": 5826,
+            "rank": 9
+        },
+        {
+            "name": "PATRYCJA",
+            "value": 4948,
+            "rank": 10
+        }
+    ],
+    "2003": [
+        {
+            "name": "JULIA",
+            "value": 12151,
+            "rank": 1      
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 11885,
+            "rank": 2
+        },
+        {
+            "name": "NATALIA",
+            "value": 9026,
+            "rank": 3
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 8650,
+            "rank": 4
+        },
+        {
+            "name": "OLIWIA",
+            "value": 6639,
+            "rank": 5
+        },
+        {
+            "name": "WERONIKA",
+            "value": 6171,
+            "rank": 6      
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 5889,
+            "rank": 7
+        },
+        {
+            "name": "MARTYNA",
+            "value": 5661,
+            "rank": 8
+        },
+        {
+            "name": "KAROLINA",
+            "value": 5333,
+            "rank": 9
+        },
+        {
+            "name": "PATRYCJA",
+            "value": 4744,
+            "rank": 10
+        }
+    ],
+    "2004": [
+        {
+            "name": "JULIA",
+            "value": 13773,
+            "rank": 1      
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 11207,
+            "rank": 2
+        },
+        {
+            "name": "NATALIA",
+            "value": 9173,
+            "rank": 3
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 9031,
+            "rank": 4
+        },
+        {
+            "name": "OLIWIA",
+            "value": 8475,
+            "rank": 5
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 6495,
+            "rank": 6      
+        },
+        {
+            "name": "WERONIKA",
+            "value": 6011,
+            "rank": 7
+        },
+        {
+            "name": "MARTYNA",
+            "value": 5767,
+            "rank": 8
+        },
+        {
+            "name": "KAROLINA",
+            "value": 4673,
+            "rank": 9
+        },
+        {
+            "name": "PATRYCJA",
+            "value": 4289,
+            "rank": 10
+        }
+    ],
+    "2005": [
+        {
+            "name": "JULIA",
+            "value": 14232,
+            "rank": 1      
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 11580,
+            "rank": 2
+        },
+        {
+            "name": "NATALIA",
+            "value": 9694,
+            "rank": 3
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 8696,
+            "rank": 4
+        },
+        {
+            "name": "OLIWIA",
+            "value": 8581,
+            "rank": 5
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 6589,
+            "rank": 6      
+        },
+        {
+            "name": "MARTYNA",
+            "value": 5936,
+            "rank": 7
+        },
+        {
+            "name": "WERONIKA",
+            "value": 5735,
+            "rank": 8
+        },
+        {
+            "name": "KAROLINA",
+            "value": 5406,
+            "rank": 9
+        },
+        {
+            "name": "AMELIA",
+            "value": 4809,
+            "rank": 10
+        }
+    ],
+    "2006": [
+        {
+            "name": "JULIA",
+            "value": 14322,
+            "rank": 1      
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 11666,
+            "rank": 2
+        },
+        {
+            "name": "OLIWIA",
+            "value": 9682,
+            "rank": 3
+        },
+        {
+            "name": "NATALIA",
+            "value": 8731,
+            "rank": 4
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 8349,
+            "rank": 5
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 7384,
+            "rank": 6      
+        },
+        {
+            "name": "MARTYNA",
+            "value": 5960,
+            "rank": 7
+        },
+        {
+            "name": "MAJA",
+            "value": 5519,
+            "rank": 8
+        },
+        {
+            "name": "AMELIA",
+            "value": 5321,
+            "rank": 9
+        },
+        {
+            "name": "WERONIKA",
+            "value": 5282,
+            "rank": 10
+        }
+    ],
+    "2007": [
+        {
+            "name": "JULIA",
+            "value": 15440,
+            "rank": 1      
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 11589,
+            "rank": 2
+        },
+        {
+            "name": "OLIWIA",
+            "value": 9256,
+            "rank": 3
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 9131,
+            "rank": 4
+        },
+        {
+            "name": "NATALIA",
+            "value": 8693,
+            "rank": 5
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 7669,
+            "rank": 6      
+        },
+        {
+            "name": "AMELIA",
+            "value": 7247,
+            "rank": 7
+        },
+        {
+            "name": "MAJA",
+            "value": 6565,
+            "rank": 8
+        },
+        {
+            "name": "MARTYNA",
+            "value": 5814,
+            "rank": 9
+        },
+        {
+            "name": "WERONIKA",
+            "value": 5077,
+            "rank": 10
+        }
+    ],
+    "2008": [
+        {
+            "name": "JULIA",
+            "value": 17399,
+            "rank": 1      
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 11010,
+            "rank": 2
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 10710,
+            "rank": 3
+        },
+        {
+            "name": "MAJA",
+            "value": 9720,
+            "rank": 4
+        },
+        {
+            "name": "OLIWIA",
+            "value": 9526,
+            "rank": 5
+        },
+        {
+            "name": "NATALIA",
+            "value": 8622,
+            "rank": 6      
+        },
+        {
+            "name": "AMELIA",
+            "value": 7498,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 7142,
+            "rank": 8
+        },
+        {
+            "name": "NIKOLA",
+            "value": 5571,
+            "rank": 9
+        },
+        {
+            "name": "MARTYNA",
+            "value": 5244,
+            "rank": 10
+        }
+    ],
+    "2009": [
+        {
+            "name": "JULIA",
+            "value": 16010,
+            "rank": 1      
+        },
+        {
+            "name": "MAJA",
+            "value": 11729,
+            "rank": 2
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 10615,
+            "rank": 3
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 9365,
+            "rank": 4
+        },
+        {
+            "name": "OLIWIA",
+            "value": 8597,
+            "rank": 5
+        },
+        {
+            "name": "AMELIA",
+            "value": 7976,
+            "rank": 6      
+        },
+        {
+            "name": "NATALIA",
+            "value": 7659,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 6879,
+            "rank": 8
+        },
+        {
+            "name": "LENA",
+            "value": 5814,
+            "rank": 9
+        },
+        {
+            "name": "NIKOLA",
+            "value": 5484,
+            "rank": 10
+        }
+    ],
+    "2010": [
+        {
+            "name": "JULIA",
+            "value": 15445,
+            "rank": 1      
+        },
+        {
+            "name": "MAJA",
+            "value": 12312,
+            "rank": 2
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 10237,
+            "rank": 3
+        },
+        {
+            "name": "LENA",
+            "value": 8618,
+            "rank": 4
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 7835,
+            "rank": 5
+        },
+        {
+            "name": "AMELIA",
+            "value": 7604,
+            "rank": 6      
+        },
+        {
+            "name": "OLIWIA",
+            "value": 7184,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 7124,
+            "rank": 8
+        },
+        {
+            "name": "NATALIA",
+            "value": 7045,
+            "rank": 9
+        },
+        {
+            "name": "ZOFIA",
+            "value": 5258,
+            "rank": 10
+        }
+    ],
+    "2011": [
+        {
+            "name": "JULIA",
+            "value": 13814,
+            "rank": 1      
+        },
+        {
+            "name": "MAJA",
+            "value": 11160,
+            "rank": 2
+        },
+        {
+            "name": "LENA",
+            "value": 10221,
+            "rank": 3
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 9283,
+            "rank": 4
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 7288,
+            "rank": 5
+        },
+        {
+            "name": "AMELIA",
+            "value": 6975,
+            "rank": 6      
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 6520,
+            "rank": 7
+        },
+        {
+            "name": "OLIWIA",
+            "value": 6420,
+            "rank": 8
+        },
+        {
+            "name": "NATALIA",
+            "value": 6396,
+            "rank": 9
+        },
+        {
+            "name": "ZOFIA",
+            "value": 5075,
+            "rank": 10
+        }
+    ],
+    "2012": [
+        {
+            "name": "JULIA",
+            "value": 14287,
+            "rank": 1      
+        },
+        {
+            "name": "LENA",
+            "value": 12064,
+            "rank": 2
+        },
+        {
+            "name": "MAJA",
+            "value": 10349,
+            "rank": 3
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 8932,
+            "rank": 4
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 6922,
+            "rank": 5
+        },
+        {
+            "name": "AMELIA",
+            "value": 6776,
+            "rank": 6      
+        },
+        {
+            "name": "OLIWIA",
+            "value": 6294,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 6055,
+            "rank": 8
+        },
+        {
+            "name": "NATALIA",
+            "value": 5924,
+            "rank": 9
+        },
+        {
+            "name": "ZOFIA",
+            "value": 5602,
+            "rank": 10
+        }
+    ],
+    "2013": [
+        {
+            "name": "LENA",
+            "value": 11440,
+            "rank": 1      
+        },
+        {
+            "name": "JULIA",
+            "value": 11286,
+            "rank": 2
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 9675,
+            "rank": 3
+        },
+        {
+            "name": "MAJA",
+            "value": 9320,
+            "rank": 4
+        },
+        {
+            "name": "ZOFIA",
+            "value": 6700,
+            "rank": 5
+        },
+        {
+            "name": "AMELIA",
+            "value": 6484,
+            "rank": 6      
+        },
+        {
+            "name": "HANNA",
+            "value": 6270,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 6014,
+            "rank": 8
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 5996,
+            "rank": 9
+        },
+        {
+            "name": "NATALIA",
+            "value": 5585,
+            "rank": 10
+        }
+    ],
+    "2014": [
+        {
+            "name": "LENA",
+            "value": 10638,
+            "rank": 1      
+        },
+        {
+            "name": "JULIA",
+            "value": 9661,
+            "rank": 2
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 9627,
+            "rank": 3
+        },
+        {
+            "name": "MAJA",
+            "value": 8894,
+            "rank": 4
+        },
+        {
+            "name": "ZOFIA",
+            "value": 7229,
+            "rank": 5
+        },
+        {
+            "name": "HANNA",
+            "value": 7018,
+            "rank": 6      
+        },
+        {
+            "name": "AMELIA",
+            "value": 6326,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 6294,
+            "rank": 8
+        },
+        {
+            "name": "NATALIA",
+            "value": 5719,
+            "rank": 9
+        },
+        {
+            "name": "WIKTORIA",
+            "value": 5526,
+            "rank": 10
+        }
+    ],
+    "2015": [
+        {
+            "name": "ZUZANNA",
+            "value": 9568,
+            "rank": 1      
+        },
+        {
+            "name": "LENA",
+            "value": 9291,
+            "rank": 2
+        },
+        {
+            "name": "JULIA",
+            "value": 9207,
+            "rank": 3
+        },
+        {
+            "name": "MAJA",
+            "value": 8538,
+            "rank": 4
+        },
+        {
+            "name": "ZOFIA",
+            "value": 7652,
+            "rank": 5
+        },
+        {
+            "name": "HANNA",
+            "value": 7307,
+            "rank": 6      
+        },
+        {
+            "name": "AMELIA",
+            "value": 7032,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 5807,
+            "rank": 8
+        },
+        {
+            "name": "ALICJA",
+            "value": 5759,
+            "rank": 9
+        },
+        {
+            "name": "NATALIA",
+            "value": 5095,
+            "rank": 10
+        }
+    ],
+    "2016": [
+        {
+            "name": "ZUZANNA",
+            "value": 9179,
+            "rank": 1      
+        },
+        {
+            "name": "JULIA",
+            "value": 9127,
+            "rank": 2
+        },
+        {
+            "name": "LENA",
+            "value": 8768,
+            "rank": 3
+        },
+        {
+            "name": "MAJA",
+            "value": 8720,
+            "rank": 4
+        },
+        {
+            "name": "HANNA",
+            "value": 8272,
+            "rank": 5
+        },
+        {
+            "name": "ZOFIA",
+            "value": 7967,
+            "rank": 6      
+        },
+        {
+            "name": "AMELIA",
+            "value": 7005,
+            "rank": 7
+        },
+        {
+            "name": "ALICJA",
+            "value": 5900,
+            "rank": 8
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 5528,
+            "rank": 9
+        },
+        {
+            "name": "NATALIA",
+            "value": 5023,
+            "rank": 10
+        }
+    ],
+    "2017": [
+        {
+            "name": "JULIA",
+            "value": 9692,
+            "rank": 1      
+        },
+        {
+            "name": "ZUZANNA",
+            "value": 9375,
+            "rank": 2
+        },
+        {
+            "name": "ZOFIA",
+            "value": 8585,
+            "rank": 3
+        },
+        {
+            "name": "LENA",
+            "value": 8538,
+            "rank": 4
+        },
+        {
+            "name": "MAJA",
+            "value": 8291,
+            "rank": 5
+        },
+        {
+            "name": "HANNA",
+            "value": 8126,
+            "rank": 6      
+        },
+        {
+            "name": "AMELIA",
+            "value": 6551,
+            "rank": 7
+        },
+        {
+            "name": "ALICJA",
+            "value": 6156,
+            "rank": 8
+        },
+        {
+            "name": "MARIA",
+            "value": 5521,
+            "rank": 9
+        },
+        {
+            "name": "ALEKSANDRA",
+            "value": 5423,
+            "rank": 10
+        }
+    ],
+    "2018": [
+        {
+            "name": "ZUZANNA",
+            "value": 8866,
+            "rank": 1      
+        },
+        {
+            "name": "JULIA",
+            "value": 8468,
+            "rank": 2
+        },
+        {
+            "name": "MAJA",
+            "value": 8033,
+            "rank": 3
+        },
+        {
+            "name": "ZOFIA",
+            "value": 7928,
+            "rank": 4
+        },
+        {
+            "name": "HANNA",
+            "value": 7723,
+            "rank": 5
+        },
+        {
+            "name": "LENA",
+            "value": 7650,
+            "rank": 6      
+        },
+        {
+            "name": "ALICJA",
+            "value": 5759,
+            "rank": 7
+        },
+        {
+            "name": "MARIA",
+            "value": 5442,
+            "rank": 8
+        },
+        {
+            "name": "AMELIA",
+            "value": 5310,
+            "rank": 9
+        },
+        {
+            "name": "OLIWIA",
+            "value": 5058,
+            "rank": 10
+        }
+    ],
+    "2019": [
+        {
+            "name": "ZUZANNA",
+            "value": 8456,
+            "rank": 1      
+        },
+        {
+            "name": "JULIA",
+            "value": 8189,
+            "rank": 2
+        },
+        {
+            "name": "ZOFIA",
+            "value": 7737,
+            "rank": 3
+        },
+        {
+            "name": "MAJA",
+            "value": 7435,
+            "rank": 4
+        },
+        {
+            "name": "HANNA",
+            "value": 7382,
+            "rank": 5
+        },
+        {
+            "name": "LENA",
+            "value": 6815,
+            "rank": 6      
+        },
+        {
+            "name": "ALICJA",
+            "value": 5229,
+            "rank": 7
+        },
+        {
+            "name": "MARIA",
+            "value": 5139,
+            "rank": 8
+        },
+        {
+            "name": "OLIWIA",
+            "value": 4858,
+            "rank": 9
+        },
+        {
+            "name": "AMELIA",
+            "value": 4732,
+            "rank": 10
+        }
+    ],
+    "2020": [
+        {
+            "name": "ZUZANNA",
+            "value": 7351,
+            "rank": 1      
+        },
+        {
+            "name": "JULIA",
+            "value": 7351,
+            "rank": 2
+        },
+        {
+            "name": "ZOFIA",
+            "value": 7073,
+            "rank": 3
+        },
+        {
+            "name": "HANNA",
+            "value": 6658,
+            "rank": 4
+        },
+        {
+            "name": "MAJA",
+            "value": 6508,
+            "rank": 5
+        },
+        {
+            "name": "LENA",
+            "value": 5446,
+            "rank": 6      
+        },
+        {
+            "name": "ALICJA",
+            "value": 5139,
+            "rank": 7
+        },
+        {
+            "name": "OLIWIA",
+            "value": 4979,
+            "rank": 8
+        },
+        {
+            "name": "LAURA",
+            "value": 4954,
+            "rank": 9
+        },
+        {
+            "name": "MARIA",
+            "value": 4650,
+            "rank": 10
+        }
+    ]
+}
