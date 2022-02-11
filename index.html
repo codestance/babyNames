@@ -27,85 +27,88 @@
     </style>
 </head>
 <body class="container-fluid">
-    <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
     <main class="wrapper px-md-4 px-1 py-2">
-        <br/>
-        <h2>O danych</h2>
-        <p>
-            Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2020.
-            Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
-            <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera, w której dużą popularnością cieszył się Klaudiusz Sevković.
-            <br/>Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2020 nazwano aż 273618 dzieci, co stanowi 6,38% wszystkich chłopców.
-            Z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 254148 razy, czyli nazwano tak 6,19% wszystkich dziewczynek urodzonych w ostatnich dwudziestu latach.
-        </p>
-        <br/>
-        <a href="#instruction">Przejdź do wykresu popularnośći</a>
-        <br/>
-        <br/>
-        <h2>Liczba urodzeń</h2>
-        <div id="births"></div>
-        <p>
-            Ogólna liczba urodzeń zmniejszyła się z 724 tys. w 1983 roku do 355 tys. w roku 2003, przy czym
-            był to okres, gdy w wieku najwyższego natężenia urodzeń (20–29 lat) były kobiety urodzone w latach
-            1970–1985, czyli podczas echa powojennego wyżu urodzeń. Od 2004 roku liczba urodzeń stopniowo
-            rosła (do 419 tys. w roku 2009), jednak już rok później ponownie wystąpiła tendencja spadkowa do
-            356 tys. w 2020 roku. Tendencję zakłócił wzrost liczby urodzeń w latach: 2014 (o blisko 6 tys. w stosunku do roku poprzedniego), 2016 (o prawie 13 tys.) i 2017 (o blisko 20 tys.).
-            <br/>Na znaczący spadek liczby urodzeń po 2009 roku wpływał przede wszystkim spadek liczby urodzeń pierwszego dziecka, zaś chwilowy wzrost
-            liczby urodzeń w roku 2014 oraz w latach 2016–2017 wynikał z większej liczby urodzeń drugiego i kolejnego dziecka.(1)
-            <br/>Jak wynika z rządowego dokumentu(2) współczynnik dzietności jest powiązany ze stopą bezrobocia.
-            W 2003 roku, gdy nastąpił spadek urodzeń stopa bezrobocia wynosiła ~20%. Natomiast podczas wzrostu urodzeń w 2017 roku
-            bezrobocie było najniższe od 1991 roku(3).
-            <br/>Wzrost urodzeń w latach  2016-2017 mógł mieć również związek ze sztandarowym programem społecznym PiS - czyli 500 plus,
-            który na początku obejmował tylko drugie i kolejne dziecko. W związku z tym nastąpiła krótkotrwała korekta tzw. odroczonych 
-            decyzji o urodzeniu drugiego i trzeciego dziecka. Jednak program ten nie zwiększył dzietności - liczba kobiet 
-            decydujących się na pierwsze dziecko ciągle spada, a 2021 rok zapowiada się jako powojenny (negatywny) rekord.
-        </p>
-        <br/>
-        <h2>Poplarność imion</h2>
-        <p>
-            Z racji różnej liczby urodzeń w kolejnych latach popularność imion wyrażona jest w procentach wszystkich urodzeń
-            w danym roku z podziałem na płeć. 
-        </p>
-        <h3 id="instruction">Jak używać</h3>
-        <p>
-            Zacznij wpisywać imię w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij <em>Enter</em>.
-            Możesz porównywać maksymalnie do ośmiu imon na raz.
-            Osobno przedstwione są różne pisownie i warianty, np. Alex, Aleks. Jeśli imię nadawane było chłopcom i dziewczynkom w nawiasie podana jest płeć, np Alex (K), Alex (M).
-        </p>
-        <br/>
-        <div class="btn-group w-100" role="group">
-            <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple="multiple" tabindex="-1">
-            </select>
-        </div>
-        <br/>
-        <div id="names"></div>
-        <!-- <div id="namesNew"></div> -->
-        <section class="py-4">
-            <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>
-            <p>10 nalpopularniejszych imion na przestrzeni lat z podziałem na płeć</p>  
-            <h4>Imiona dla chłopców</h4>
+        <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
+        <article>
+            <h2>O danych</h2>
             <p>
-                Przez lata najpopularniejszym imieniem dla chłopców był Jakub z ogromną przewagą nad kolejnymi pozycjami.
-                W 2016 roku pierwsze miejsce zgarnął Antoni, a różnice pomiędzy kolejnymi pozycjami zaczęły się zmniejszać.
-                W 2020 Antoni wciąż utrzymuje się na prowadzeniu, a Jakub pierwszy raz spadł z podium popularności.
+                Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2020.
+                Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
+                <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera, w której dużą popularnością cieszył się Klaudiusz Sevković.
+                <br/>Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2020 nazwano aż 273618 dzieci, co stanowi 6,38% wszystkich chłopców.
+                Z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 254148 razy, czyli nazwano tak 6,19% wszystkich dziewczynek urodzonych w ostatnich dwudziestu latach.
             </p>
-            <div id="raceM" class="race position-relative"></div>
-            <button id="raceMstart" class="btn btn-success">Start</button>
-            <button id="raceMstop" class="btn btn-danger">Stop</button>
-        </section>
-        <section class="py-4">
-            <h4>Imiona dla dziewczynek</h4>
+            <a href="#instruction">Przejdź do wykresu popularnośći</a>
+        </article>
+        <article>
+            <h2>Liczba urodzeń</h2>
+            <div id="births"></div>
             <p>
-                W roku 2000 najpopularniejszym imieniem dla dziewczynek była Natalia,
-                jednak już rok później na pierwsze miejsce wysunęła się Julia i nie oddała prowadzenia przez 12 lat.
-                W 2013 najpopularniejszym imieniem została Lena, ale już w 2015 pierwsze miejsce zgarnęła Zuzanna
-                i prowadzi do dziś, z wyjątkiem 2017 roku, w którym to do chwały wróciła Julia.
-            
+                Ogólna liczba urodzeń zmniejszyła się z 724 tys. w 1983 roku do 355 tys. w roku 2003, przy czym
+                był to okres, gdy w wieku najwyższego natężenia urodzeń (20–29 lat) były kobiety urodzone w latach
+                1970–1985, czyli podczas echa powojennego wyżu urodzeń. Od 2004 roku liczba urodzeń stopniowo
+                rosła (do 419 tys. w roku 2009), jednak już rok później ponownie wystąpiła tendencja spadkowa do
+                356 tys. w 2020 roku. Tendencję zakłócił wzrost liczby urodzeń w latach: 2014 (o blisko 6 tys. w stosunku do roku poprzedniego), 2016 (o prawie 13 tys.) i 2017 (o blisko 20 tys.).
+                <br/>Na znaczący spadek liczby urodzeń po 2009 roku wpływał przede wszystkim spadek liczby urodzeń pierwszego dziecka, zaś chwilowy wzrost
+                liczby urodzeń w roku 2014 oraz w latach 2016–2017 wynikał z większej liczby urodzeń drugiego i kolejnego dziecka.(1)
+                <br/>Jak wynika z rządowego dokumentu(2) współczynnik dzietności jest powiązany ze stopą bezrobocia.
+                W 2003 roku, gdy nastąpił spadek urodzeń stopa bezrobocia wynosiła ~20%. Natomiast podczas wzrostu urodzeń w 2017 roku
+                bezrobocie było najniższe od 1991 roku(3).
+                <br/>Wzrost urodzeń w latach  2016-2017 mógł mieć również związek ze sztandarowym programem społecznym PiS - czyli 500 plus,
+                który na początku obejmował tylko drugie i kolejne dziecko. W związku z tym nastąpiła krótkotrwała korekta tzw. odroczonych 
+                decyzji o urodzeniu drugiego i trzeciego dziecka. Jednak program ten nie zwiększył dzietności - liczba kobiet 
+                decydujących się na pierwsze dziecko ciągle spada, a 2021 rok zapowiada się jako powojenny (negatywny) rekord.
             </p>
-            <div id="raceW" class="race position-relative"></div>
-            <button id="raceWstart" class="btn btn-success">Start</button>
-            <button id="raceWstop" class="btn btn-danger">Stop</button> 
-        </section>        
+        </article>
+        <article>
+            <section>
+                <h2>Poplarność imion</h2>
+                <p>
+                    Z racji różnej liczby urodzeń w kolejnych latach popularność imion wyrażona jest w procentach wszystkich urodzeń
+                    w danym roku z podziałem na płeć. 
+                </p>
+                <h3 id="instruction">Jak używać</h3>
+                <p>
+                    Zacznij wpisywać imię w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij <em>Enter</em>.
+                    Możesz porównywać maksymalnie do ośmiu imon na raz.
+                    Osobno przedstwione są różne pisownie i warianty, np. Alex, Aleks. Jeśli imię nadawane było chłopcom i dziewczynkom w nawiasie podana jest płeć, np Alex (K), Alex (M).
+                </p>
+                <br/>
+                <div class="btn-group w-100" role="group">
+                    <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple="multiple" tabindex="-1">
+                    </select>
+                </div>
+                <br/>
+                <div id="names"></div>
+                <!-- <div id="namesNew"></div> -->
+            </section>
+            <section class="py-4">
+                <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>
+                <p>10 nalpopularniejszych imion na przestrzeni lat z podziałem na płeć</p>  
+                <h4>Imiona dla chłopców</h4>
+                <p>
+                    Przez lata najpopularniejszym imieniem dla chłopców był Jakub z ogromną przewagą nad kolejnymi pozycjami.
+                    W 2016 roku pierwsze miejsce zgarnął Antoni, a różnice pomiędzy kolejnymi pozycjami zaczęły się zmniejszać.
+                    W 2020 Antoni wciąż utrzymuje się na prowadzeniu, a Jakub pierwszy raz spadł z podium popularności.
+                </p>
+                <div id="raceM" class="race position-relative"></div>
+                <button id="raceMstart" class="btn btn-success">Start</button>
+                <button id="raceMstop" class="btn btn-danger">Stop</button>
+            </section>
+            <section class="py-4">
+                <h4>Imiona dla dziewczynek</h4>
+                <p>
+                    W roku 2000 najpopularniejszym imieniem dla dziewczynek była Natalia,
+                    jednak już rok później na pierwsze miejsce wysunęła się Julia i nie oddała prowadzenia przez 12 lat.
+                    W 2013 najpopularniejszym imieniem została Lena, ale już w 2015 pierwsze miejsce zgarnęła Zuzanna
+                    i prowadzi do dziś, z wyjątkiem 2017 roku, w którym to do chwały wróciła Julia.
+                
+                </p>
+                <div id="raceW" class="race position-relative"></div>
+                <button id="raceWstart" class="btn btn-success">Start</button>
+                <button id="raceWstop" class="btn btn-danger">Stop</button> 
+            </section>  
+        </article>      
     </main>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
