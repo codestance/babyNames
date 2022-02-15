@@ -29,18 +29,7 @@
 <body class="container-fluid">
     <main class="wrapper px-md-4 px-1 py-2">
         <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
-        <article>
-            <h2>O danych</h2>
-            <p>
-                Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2020.
-                Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
-                <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera, w której dużą popularnością cieszył się Klaudiusz Sevković.
-                <br/>Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2020 nazwano aż 273618 dzieci, co stanowi 6,38% wszystkich chłopców.
-                Z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 254148 razy, czyli nazwano tak 6,19% wszystkich dziewczynek urodzonych w ostatnich dwudziestu latach.
-            </p>
-            <a href="#instruction">Przejdź do wykresu popularnośći</a>
-        </article>
-        <article>
+        <article class="py-4">
             <h2>Liczba urodzeń</h2>
             <div id="births"></div>
             <p>
@@ -60,7 +49,7 @@
                 decydujących się na pierwsze dziecko ciągle spada, a 2021 rok zapowiada się jako powojenny (negatywny) rekord.
             </p>
         </article>
-        <article>
+        <article class="py-4">
             <section>
                 <h2>Poplarność imion</h2>
                 <p>
@@ -82,7 +71,7 @@
                 <div id="names"></div>
                 <!-- <div id="namesNew"></div> -->
             </section>
-            <section class="py-4">
+            <section class="py-3">
                 <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>
                 <p>10 nalpopularniejszych imion na przestrzeni lat z podziałem na płeć</p>  
                 <h4>Imiona dla chłopców</h4>
@@ -95,7 +84,7 @@
                 <button id="raceMstart" class="btn btn-success">Start</button>
                 <button id="raceMstop" class="btn btn-danger">Stop</button>
             </section>
-            <section class="py-4">
+            <section class="py-3">
                 <h4>Imiona dla dziewczynek</h4>
                 <p>
                     W roku 2000 najpopularniejszym imieniem dla dziewczynek była Natalia,
@@ -108,6 +97,17 @@
                 <button id="raceWstart" class="btn btn-success">Start</button>
                 <button id="raceWstop" class="btn btn-danger">Stop</button> 
             </section>  
+        </article>
+        <article class="py-4">
+            <h2>O danych</h2>
+            <p>
+                Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2020.
+                Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
+                <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera, w której dużą popularnością cieszył się Klaudiusz Sevković.
+                <br/>Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2020 nazwano aż 273618 dzieci, co stanowi 6,38% wszystkich chłopców.
+                Z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 254148 razy, czyli nazwano tak 6,19% wszystkich dziewczynek urodzonych w ostatnich dwudziestu latach.
+            </p>
+            <!-- <a href="#instruction">Przejdź do wykresu popularnośći</a> -->
         </article>      
     </main>
     <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -116,7 +116,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
     <script>
     var chart,data;
-    const years = []; for(let i=2000;i<=2020;i++) years.push(i)
+    const years = []; for(let i=2000; i<=2020; i++) years.push(i)
     const yearsColumn = ['x']; for(let y of years) yearsColumn.push(y)
     function addOption(name){
         const opt = `<option id="${name}" value="${name}" >${name}</option>`;
@@ -207,44 +207,16 @@
     //         }
     //     }
     // })
-
-    c3.generate({
-        bindto: '#births',
-        data: {
-            x: 'year',
-            url: 'births.csv',
-            type: 'bar',
-            types: {
-                sum: 'line'
-            },
-            // groups: [
-            //     ['M', 'W']
-            // ],
-            order: null,
-            names: {
-                M: 'chłopcy',
-                W: 'dziewczynki',
-                sum: 'suma'
-            }
-        },
-        axis: {
-            y: {
-                max: 420000,
-                tick: {
-                    values: [100000, 200000, 300000, 400000],
-                    format: d3.format("~s")
-                }
-            }
-        }
-    })
     </script>
     <script type="module">
+        import {default as births} from '/births.js'
         import {default as race} from '/race.js'
+        births('births')
         race('raceM', 2020)
         race('raceW', 2020)
     </script>
 </body>
-<footer class="py-2">
+<footer class="py-4">
     <ol>
         <li><a href="https://www.batory.org.pl/wp-content/uploads/2021/09/I.E.Kotowska_Zmiany.demograficzne.w.Polsce.pdf"><cite>Zmiany demograficzne w Polsce</cite> I.E. Kotowska</a></li>
         <li><a href="https://legislacja.rcl.gov.pl/docs//2/12279566/12326824/12326825/dokument206588.pdf">Rządowe uzasadnienie programu 500 plus</a></li>
