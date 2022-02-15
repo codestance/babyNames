@@ -1,0 +1,1095 @@
+{
+    "2000": [
+        {
+            "name": "JAKUB",
+            "value": 14497,
+            "rank": 1      
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 11454,
+            "rank": 2
+        },
+        {
+            "name": "KACPER",
+            "value": 8898,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 8498,
+            "rank": 4
+        },
+        {
+            "name": "PATRYK",
+            "value": 7743,
+            "rank": 5
+        },
+        {
+            "name": "DAWID",
+            "value": 7063,
+            "rank": 6      
+        },
+        {
+            "name": "KAMIL",
+            "value": 6842,
+            "rank": 7
+        },
+        {
+            "name": "PIOTR",
+            "value": 5608,
+            "rank": 8
+        },
+        {
+            "name": "SZYMON",
+            "value": 5486,
+            "rank": 9
+        },
+        {
+            "name": "PAWEŁ",
+            "value": 5109,
+            "rank": 10
+        }
+
+    ],
+    "2001": [
+        {
+            "name": "JAKUB",
+            "value": 18612,
+            "rank": 1
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 9899,
+            "rank": 2
+        },
+        {
+            "name": "KACPER",
+            "value": 8569,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 8529,
+            "rank": 4
+        },
+        {
+            "name": "DAWID",
+            "value": 7203,
+            "rank": 5
+        },
+        {
+            "name": "PATRYK",
+            "value": 6800,
+            "rank": 6      
+        },
+        {
+            "name": "KAMIL",
+            "value": 6115,
+            "rank": 7
+        },
+        {
+            "name": "PIOTR",
+            "value": 5444,
+            "rank": 8
+        },
+        {
+            "name": "SZYMON",
+            "value": 4971,
+            "rank": 9
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 4562,
+            "rank": 10
+        }
+    ],
+    "2002": [
+        {
+            "name": "JAKUB",
+            "value": 18018,
+            "rank": 1
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 10177,
+            "rank": 2
+        },
+        {
+            "name": "KACPER",
+            "value": 10048,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 8362,
+            "rank": 4
+        },
+        {
+            "name": "DAWID",
+            "value": 7714,
+            "rank": 5
+        },
+        {
+            "name": "PATRYK",
+            "value": 5734,
+            "rank": 6      
+        },
+        {
+            "name": "SZYMON",
+            "value": 5285,
+            "rank": 7
+        },
+        {
+            "name": "KAMIL",
+            "value": 5078,
+            "rank": 8
+        },
+        {
+            "name": "PIOTR",
+            "value": 4828,
+            "rank": 9
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 4599,
+            "rank": 10
+        }
+    ],
+    "2003": [
+        {
+            "name": "JAKUB",
+            "value": 16429,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 11855,
+            "rank": 2
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 10313,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 7526,
+            "rank": 4
+        },
+        {
+            "name": "DAWID",
+            "value": 6312,
+            "rank": 5
+        },
+        {
+            "name": "SZYMON",
+            "value": 5483,
+            "rank": 6      
+        },
+        {
+            "name": "PATRYK",
+            "value": 5327,
+            "rank": 7
+        },
+        {
+            "name": "KAMIL",
+            "value": 4839,
+            "rank": 8
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 4605,
+            "rank": 9
+        },
+        {
+            "name": "PIOTR",
+            "value": 4507,
+            "rank": 10
+        }
+    ],
+    "2004": [
+        {
+            "name": "JAKUB",
+            "value": 16431,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 12802,
+            "rank": 2
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 10549,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 6930,
+            "rank": 4
+        },
+        {
+            "name": "DAWID",
+            "value": 5887,
+            "rank": 5
+        },
+        {
+            "name": "SZYMON",
+            "value": 5705,
+            "rank": 6      
+        },
+        {
+            "name": "KAMIL",
+            "value": 5252,
+            "rank": 7
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 5141,
+            "rank": 8
+        },
+        {
+            "name": "PATRYK",
+            "value": 4845,
+            "rank": 9
+        },
+        {
+            "name": "MACIEJ",
+            "value": 4758,
+            "rank": 10
+        }
+    ],
+    "2005": [
+        {
+            "name": "JAKUB",
+            "value": 15802,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 12513,
+            "rank": 2
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 9939,
+            "rank": 3
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 6691,
+            "rank": 4
+        },
+        {
+            "name": "SZYMON",
+            "value": 6166,
+            "rank": 5
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 5536,
+            "rank": 6      
+        },
+        {
+            "name": "DAWID",
+            "value": 5498,
+            "rank": 7
+        },
+        {
+            "name": "KAMIL",
+            "value": 5270,
+            "rank": 8
+        },
+        {
+            "name": "MACIEJ",
+            "value": 4811,
+            "rank": 9
+        },
+        {
+            "name": "PIOTR",
+            "value": 4656,
+            "rank": 10
+        }
+    ],
+    "2006": [
+        {
+            "name": "JAKUB",
+            "value": 15756,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 12514,
+            "rank": 2
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 8970,
+            "rank": 3
+        },
+        {
+            "name": "SZYMON",
+            "value": 7356,
+            "rank": 4
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 6970,
+            "rank": 5
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 6589,
+            "rank": 6      
+        },
+        {
+            "name": "DAWID",
+            "value": 5340,
+            "rank": 7
+        },
+        {
+            "name": "PIOTR",
+            "value": 4921,
+            "rank": 8
+        },
+        {
+            "name": "FILIP",
+            "value": 4687,
+            "rank": 9
+        },
+        {
+            "name": "MACIEJ",
+            "value": 4624,
+            "rank": 10
+        }
+    ],
+    "2007": [
+        {
+            "name": "JAKUB",
+            "value": 16118,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 12196,
+            "rank": 2
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 8660,
+            "rank": 3
+        },
+        {
+            "name": "SZYMON",
+            "value": 7959,
+            "rank": 4
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 7660,
+            "rank": 5
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 6846,
+            "rank": 6      
+        },
+        {
+            "name": "DAWID",
+            "value": 5633,
+            "rank": 7
+        },
+        {
+            "name": "FILIP",
+            "value": 5595,
+            "rank": 8
+        },
+        {
+            "name": "PIOTR",
+            "value": 5227,
+            "rank": 9
+        },
+        {
+            "name": "WIKTOR",
+            "value": 4740,
+            "rank": 10
+        }
+    ],
+    "2008": [
+        {
+            "name": "JAKUB",
+            "value": 15843,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 11656,
+            "rank": 2
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 9050,
+            "rank": 3
+        },
+        {
+            "name": "SZYMON",
+            "value": 8414,
+            "rank": 4
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 7507,
+            "rank": 5
+        },
+        {
+            "name": "FILIP",
+            "value": 7363,
+            "rank": 6      
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 7226,
+            "rank": 7
+        },
+        {
+            "name": "DAWID",
+            "value": 5659,
+            "rank": 8
+        },
+        {
+            "name": "WIKTOR",
+            "value": 5507,
+            "rank": 9
+        },
+        {
+            "name": "PIOTR",
+            "value": 5372,
+            "rank": 10
+        }
+    ],
+    "2009": [
+        {
+            "name": "JAKUB",
+            "value": 14736,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 10346,
+            "rank": 2
+        },
+        {
+            "name": "SZYMON",
+            "value": 8986,
+            "rank": 3
+        },
+        {
+            "name": "FILIP",
+            "value": 8582,
+            "rank": 4
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 8472,
+            "rank": 5
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 7288,
+            "rank": 6      
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 7204,
+            "rank": 7
+        },
+        {
+            "name": "WIKTOR",
+            "value": 5525,
+            "rank": 8
+        },
+        {
+            "name": "PIOTR",
+            "value": 5447,
+            "rank": 9
+        },
+        {
+            "name": "DAWID",
+            "value": 5303,
+            "rank": 10
+        }
+    ],
+    "2010": [
+        {
+            "name": "JAKUB",
+            "value": 13764,
+            "rank": 1
+        },
+        {
+            "name": "SZYMON",
+            "value": 10395,
+            "rank": 2
+        },
+        {
+            "name": "KACPER",
+            "value": 8862,
+            "rank": 3
+        },
+        {
+            "name": "FILIP",
+            "value": 8663,
+            "rank": 4
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 7620,
+            "rank": 5
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 7376,
+            "rank": 6      
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 6670,
+            "rank": 7
+        },
+        {
+            "name": "ADAM",
+            "value": 5590,
+            "rank": 8
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 5511,
+            "rank": 9
+        },
+        {
+            "name": "WIKTOR",
+            "value": 5316,
+            "rank": 10
+        }
+    ],
+    "2011": [
+        {
+            "name": "JAKUB",
+            "value": 12661,
+            "rank": 1
+        },
+        {
+            "name": "SZYMON",
+            "value": 9345,
+            "rank": 2
+        },
+        {
+            "name": "FILIP",
+            "value": 8456,
+            "rank": 3
+        },
+        {
+            "name": "KACPER",
+            "value": 8003,
+            "rank": 4
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 6521,
+            "rank": 5
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 6482,
+            "rank": 6      
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 6014,
+            "rank": 7
+        },
+        {
+            "name": "ADAM",
+            "value": 5656,
+            "rank": 8
+        },
+        {
+            "name": "JAN",
+            "value": 5491,
+            "rank": 9
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 5101,
+            "rank": 10
+        }
+    ],
+    "2012": [
+        {
+            "name": "JAKUB",
+            "value": 11989,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 9219,
+            "rank": 2
+        },
+        {
+            "name": "FILIP",
+            "value": 8815,
+            "rank": 3
+        },
+        {
+            "name": "SZYMON",
+            "value": 8139,
+            "rank": 4
+        },
+        {
+            "name": "JAN",
+            "value": 6632,
+            "rank": 5
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 6092,
+            "rank": 6      
+        },
+        {
+            "name": "ANTONI",
+            "value": 5890,
+            "rank": 7
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 5512,
+            "rank": 8
+        },
+        {
+            "name": "BARTOSZ",
+            "value": 5352,
+            "rank": 9
+        },
+        {
+            "name": "ADAM",
+            "value": 5200,
+            "rank": 10
+        }
+    ],
+    "2013": [
+        {
+            "name": "JAKUB",
+            "value": 10870,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 8654,
+            "rank": 2
+        },
+        {
+            "name": "FILIP",
+            "value": 8101,
+            "rank": 3
+        },
+        {
+            "name": "SZYMON",
+            "value": 7140,
+            "rank": 4
+        },
+        {
+            "name": "JAN",
+            "value": 7043,
+            "rank": 5
+        },
+        {
+            "name": "ANTONI",
+            "value": 6704,
+            "rank": 6      
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 5566,
+            "rank": 7
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 5153,
+            "rank": 8
+        },
+        {
+            "name": "ADAM",
+            "value": 5029,
+            "rank": 9
+        },
+        {
+            "name": "MATEUSZ",
+            "value": 4930,
+            "rank": 10
+        }
+    ],
+    "2014": [
+        {
+            "name": "JAKUB",
+            "value": 10229,
+            "rank": 1
+        },
+        {
+            "name": "KACPER",
+            "value": 7922,
+            "rank": 2
+        },
+        {
+            "name": "ANTONI",
+            "value": 7761,
+            "rank": 3
+        },
+        {
+            "name": "FILIP",
+            "value": 7688,
+            "rank": 4
+        },
+        {
+            "name": "JAN",
+            "value": 7398,
+            "rank": 5
+        },
+        {
+            "name": "SZYMON",
+            "value": 6542,
+            "rank": 6      
+        },
+        {
+            "name": "FRANCISZEK",
+            "value": 5496,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDER",
+            "value": 5306,
+            "rank": 8
+        },
+        {
+            "name": "MICHAŁ",
+            "value": 5289,
+            "rank": 9
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 5262,
+            "rank": 10
+        }
+    ],
+    "2015": [
+        {
+            "name": "JAKUB",
+            "value": 9204,
+            "rank": 1
+        },
+        {
+            "name": "ANTONI",
+            "value": 8332,
+            "rank": 2
+        },
+        {
+            "name": "SZYMON",
+            "value": 7777,
+            "rank": 3
+        },
+        {
+            "name": "JAN",
+            "value": 7607,
+            "rank": 4
+        },
+        {
+            "name": "FILIP",
+            "value": 7235,
+            "rank": 5
+        },
+        {
+            "name": "KACPER",
+            "value": 6867,
+            "rank": 6      
+        },
+        {
+            "name": "ALEKSANDER",
+            "value": 5800,
+            "rank": 7
+        },
+        {
+            "name": "FRANCISZEK",
+            "value": 5765,
+            "rank": 8
+        },
+        {
+            "name": "MIKOŁAJ",
+            "value": 5655,
+            "rank": 9
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 5566,
+            "rank": 10
+        }
+    ],
+    "2016": [
+        {
+            "name": "ANTONI",
+            "value": 9518,
+            "rank": 1
+        },
+        {
+            "name": "JAKUB",
+            "value": 9307,
+            "rank": 2
+        },
+        {
+            "name": "SZYMON",
+            "value": 8461,
+            "rank": 3
+        },
+        {
+            "name": "JAN",
+            "value": 7865,
+            "rank": 4
+        },
+        {
+            "name": "FILIP",
+            "value": 7046,
+            "rank": 5
+        },
+        {
+            "name": "FRANCISZEK",
+            "value": 6699,
+            "rank": 6      
+        },
+        {
+            "name": "MIKOŁAJ",
+            "value": 6530,
+            "rank": 7
+        },
+        {
+            "name": "ALEKSANDER",
+            "value": 6451,
+            "rank": 8
+        },
+        {
+            "name": "KACPER",
+            "value": 6282,
+            "rank": 9
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 6000,
+            "rank": 10
+        }
+    ],
+    "2017": [
+        {
+            "name": "ANTONI",
+            "value": 9989,
+            "rank": 1
+        },
+        {
+            "name": "JAKUB",
+            "value": 9316,
+            "rank": 2
+        },
+        {
+            "name": "JAN",
+            "value": 8712,
+            "rank": 3
+        },
+        {
+            "name": "SZYMON",
+            "value": 8240,
+            "rank": 4
+        },
+        {
+            "name": "FILIP",
+            "value": 7150,
+            "rank": 5
+        },
+        {
+            "name": "FRANCISZEK",
+            "value": 7065,
+            "rank": 6      
+        },
+        {
+            "name": "ALEKSANDER",
+            "value": 6968,
+            "rank": 7
+        },
+        {
+            "name": "MIKOŁAJ",
+            "value": 6576,
+            "rank": 8
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 6346,
+            "rank": 9
+        },
+        {
+            "name": "KACPER",
+            "value": 6049,
+            "rank": 10
+        }
+    ],
+    "2018": [
+        {
+            "name": "ANTONI",
+            "value": 9329,
+            "rank": 1
+        },
+        {
+            "name": "JAKUB",
+            "value": 8908,
+            "rank": 2
+        },
+        {
+            "name": "JAN",
+            "value": 8457,
+            "rank": 3
+        },
+        {
+            "name": "SZYMON",
+            "value": 8234,
+            "rank": 4
+        },
+        {
+            "name": "ALEKSANDER",
+            "value": 7324,
+            "rank": 5
+        },
+        {
+            "name": "FRANCISZEK",
+            "value": 7094,
+            "rank": 6      
+        },
+        {
+            "name": "FILIP",
+            "value": 6407,
+            "rank": 7
+        },
+        {
+            "name": "MIKOŁAJ",
+            "value": 6008,
+            "rank": 8
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 5862,
+            "rank": 9
+        },
+        {
+            "name": "KACPER",
+            "value": 5437,
+            "rank": 10
+        }
+    ],
+    "2019": [
+        {
+            "name": "ANTONI",
+            "value": 8550,
+            "rank": 1
+        },
+        {
+            "name": "JAN",
+            "value": 8032,
+            "rank": 2
+        },
+        {
+            "name": "JAKUB",
+            "value": 7966,
+            "rank": 3
+        },
+        {
+            "name": "ALEKSANDER",
+            "value": 7432,
+            "rank": 4
+        },
+        {
+            "name": "SZYMON",
+            "value": 7177,
+            "rank": 5
+        },
+        {
+            "name": "FRANCISZEK",
+            "value": 6805,
+            "rank": 6      
+        },
+        {
+            "name": "FILIP",
+            "value": 6169,
+            "rank": 7
+        },
+        {
+            "name": "MIKOŁAJ",
+            "value": 5786,
+            "rank": 8
+        },
+        {
+            "name": "WOJCIECH",
+            "value": 5468,
+            "rank": 9
+        },
+        {
+            "name": "ADAM",
+            "value": 4899,
+            "rank": 10
+        }
+    ],
+    "2020": [
+        {
+            "name": "ANTONI",
+            "value": 8368,
+            "rank": 1
+        },
+        {
+            "name": "JAN",
+            "value": 7658,
+            "rank": 2
+        },
+        {
+            "name": "ALEKSANDER",
+            "value": 7165,
+            "rank": 3
+        },
+        {
+            "name": "JAKUB",
+            "value": 7162,
+            "rank": 4
+        },
+        {
+            "name": "FRANCISZEK",
+            "value": 7124,
+            "rank": 5
+        },
+        {
+            "name": "SZYMON",
+            "value": 6083,
+            "rank": 6      
+        },
+        {
+            "name": "FILIP",
+            "value": 5474,
+            "rank": 7
+        },
+        {
+            "name": "MIKOŁAJ",
+            "value": 5368,
+            "rank": 8
+        },
+        {
+            "name": "LEON",
+            "value": 5018,
+            "rank": 9
+        },
+        {
+            "name": "STANISŁAW",
+            "value": 4963,
+            "rank": 10
+        }
+    ]
+}

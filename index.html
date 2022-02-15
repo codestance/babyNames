@@ -9,76 +9,115 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
     <style>
+        body{
+            font-size: 16px;
+        }
         .c3-line{
             stroke-width: 2px;
         }
+        .race span{
+            position: absolute;
+            bottom: 1.5em;
+            right: 2em;
+            font-size: 3em;
+            font-weight: bolder;
+            color: lightslategray;
+        }
+        
     </style>
 </head>
 <body class="container-fluid">
-    <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
-    <div class="wrapper px-md-4 px-1 py-2">
-        <br/>
-        <h2>O danych</h2>
-        <p>
-            Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2020.
-            Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
-            <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera, w której dużą popularnością cieszył się Klaudiusz Sevković.
-            <br/>Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2020 nazwano aż 273618 dzieci, co stanowi 6,38% wszystkich chłopców.
-            Z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 254148 razy, czyli nazwano tak 6,19% wszystkich dziewczynek urodzonych w ostatnich dwudziestu latach.
-        </p>
-        <br/>
-        <a href="#instruction">Przejdź do wykresu popularnośći</a>
-        <br/>
-        <br/>
-        <h2>Liczba urodzeń</h2>
-        <div id="births"></div>
-        <p>
-            Ogólna liczba urodzeń zmniejszyła się z 724 tys. w 1983 roku do 355 tys. w roku 2003, przy czym
-            był to okres, gdy w wieku najwyższego natężenia urodzeń (20–29 lat) były kobiety urodzone w latach
-            1970–1985, czyli podczas echa powojennego wyżu urodzeń. Od 2004 roku liczba urodzeń stopniowo
-            rosła (do 419 tys. w roku 2009), jednak już rok później ponownie wystąpiła tendencja spadkowa do
-            356 tys. w 2020 roku. Tendencję zakłócił wzrost liczby urodzeń w latach: 2014 (o blisko 6 tys. w stosunku do roku poprzedniego), 2016 (o prawie 13 tys.) i 2017 (o blisko 20 tys.).
-            <br/>Na znaczący spadek liczby urodzeń po 2009 roku wpływał przede wszystkim spadek liczby urodzeń pierwszego dziecka, zaś chwilowy wzrost
-            liczby urodzeń w roku 2014 oraz w latach 2016–2017 wynikał z większej liczby urodzeń drugiego i kolejnego dziecka.(1)
-            <br/>Jak wynika z rządowego dokumentu(2) współczynnik dzietności jest powiązany ze stopą bezrobocia.
-            W 2003 roku, gdy nastąpił spadek urodzeń stopa bezrobocia wynosiła ~20%. Natomiast podczas wzrostu urodzeń w 2017 roku
-            bezrobocie było najniższe od 1991 roku(3).
-            <br/>Wzrost urodzeń w latach  2016-2017 mógł mieć również związek ze sztandarowym programem społecznym PiS - czyli 500 plus,
-            który na początku obejmował tylko drugie i kolejne dziecko. W związku z tym nastąpiła krótkotrwała korekta tzw. odroczonych 
-            decyzji o urodzeniu drugiego i trzeciego dziecka. Jednak program ten nie zwiększył dzietności - liczba kobiet 
-            decydujących się na pierwsze dziecko ciągle spada, a 2021 rok zapowiada się jako powojenny (negatywny) rekord.
-        </p>
-        <br/>
-        <h2>Poplarność imion</h2>
-        <p>
-            Z racji różnej liczby urodzeń w kolejnych latach popularność imion wyrażona jest w procentach wszystkich urodzeń
-            w danym roku z podziałem na płeć. 
-        </p>
-        <h3 id="instruction">Jak używać</h3>
-        <p>
-            Zacznij wpisywać imię w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij <em>Enter</em>.
-            Możesz porównywać maksymalnie do ośmiu imon na raz.
-            Osobno przedstwione są różne pisownie i warianty, np. Alex, Aleks. Jeśli imię nadawane było chłopcom i dziewczynkom w nawiasie podana jest płeć, np Alex (K), Alex (M).
-        </p>
-        <br/>
-        <div class="btn-group w-100" role="group">
-            <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple="multiple" tabindex="-1">
-            </select>
-        </div>
-        <br/>
-        <div id="names"></div>
-        <!-- <div id="namesNew"></div> -->
-        <br/>
-        <br/>        
-    </div>
+    <main class="wrapper px-md-4 px-1 py-2">
+        <h1 class="text-center display-4">Imiona dzieci w Polsce</h1>
+        <article class="py-4">
+            <h2>Liczba urodzeń</h2>
+            <div id="births"></div>
+            <p>
+                Ogólna liczba urodzeń zmniejszyła się z 724 tys. w 1983 roku do 355 tys. w roku 2003, przy czym
+                był to okres, gdy w wieku najwyższego natężenia urodzeń (20–29 lat) były kobiety urodzone w latach
+                1970–1985, czyli podczas echa powojennego wyżu urodzeń. Od 2004 roku liczba urodzeń stopniowo
+                rosła (do 419 tys. w roku 2009), jednak już rok później ponownie wystąpiła tendencja spadkowa do
+                356 tys. w 2020 roku. Tendencję zakłócił wzrost liczby urodzeń w latach: 2014 (o blisko 6 tys. w stosunku do roku poprzedniego), 2016 (o prawie 13 tys.) i 2017 (o blisko 20 tys.).
+                <br/>Na znaczący spadek liczby urodzeń po 2009 roku wpływał przede wszystkim spadek liczby urodzeń pierwszego dziecka, zaś chwilowy wzrost
+                liczby urodzeń w roku 2014 oraz w latach 2016–2017 wynikał z większej liczby urodzeń drugiego i kolejnego dziecka.(1)
+                <br/>Jak wynika z rządowego dokumentu(2) współczynnik dzietności jest powiązany ze stopą bezrobocia.
+                W 2003 roku, gdy nastąpił spadek urodzeń stopa bezrobocia wynosiła ~20%. Natomiast podczas wzrostu urodzeń w 2017 roku
+                bezrobocie było najniższe od 1991 roku(3).
+                <br/>Wzrost urodzeń w latach  2016-2017 mógł mieć również związek ze sztandarowym programem społecznym PiS - czyli 500 plus,
+                który na początku obejmował tylko drugie i kolejne dziecko. W związku z tym nastąpiła krótkotrwała korekta tzw. odroczonych 
+                decyzji o urodzeniu drugiego i trzeciego dziecka. Jednak program ten nie zwiększył dzietności - liczba kobiet 
+                decydujących się na pierwsze dziecko ciągle spada, a 2021 rok zapowiada się jako powojenny (negatywny) rekord.
+            </p>
+        </article>
+        <article class="py-4">
+            <section>
+                <h2>Poplarność imion</h2>
+                <p>
+                    Z racji różnej liczby urodzeń w kolejnych latach popularność imion wyrażona jest w procentach wszystkich urodzeń
+                    w danym roku z podziałem na płeć. 
+                </p>
+                <h3 id="instruction">Jak używać</h3>
+                <p>
+                    Zacznij wpisywać imię w polu nad wykresem i wybierz z listy, lub wpisz całe imię i kliknij <em>Enter</em>.
+                    Możesz porównywać maksymalnie do ośmiu imon na raz.
+                    Osobno przedstwione są różne pisownie i warianty, np. Alex, Aleks. Jeśli imię nadawane było chłopcom i dziewczynkom w nawiasie podana jest płeć, np Alex (K), Alex (M).
+                </p>
+                <br/>
+                <div class="btn-group w-100" role="group">
+                    <select id="selectNames" class="chosen-select w-100" data-placeholder="Wpisz imię..." multiple="multiple" tabindex="-1">
+                    </select>
+                </div>
+                <br/>
+                <div id="names"></div>
+                <!-- <div id="namesNew"></div> -->
+            </section>
+            <section class="py-3">
+                <h3>Ranking najpopularniejszych imion wg kolejnych lat</h3>
+                <p>10 nalpopularniejszych imion na przestrzeni lat z podziałem na płeć</p>  
+                <h4>Imiona dla chłopców</h4>
+                <p>
+                    Przez lata najpopularniejszym imieniem dla chłopców był Jakub z ogromną przewagą nad kolejnymi pozycjami.
+                    W 2016 roku pierwsze miejsce zgarnął Antoni, a różnice pomiędzy kolejnymi pozycjami zaczęły się zmniejszać.
+                    W 2020 Antoni wciąż utrzymuje się na prowadzeniu, a Jakub pierwszy raz spadł z podium popularności.
+                </p>
+                <div id="raceM" class="race position-relative"></div>
+                <button id="raceMstart" class="btn btn-success">Start</button>
+                <button id="raceMstop" class="btn btn-danger">Stop</button>
+            </section>
+            <section class="py-3">
+                <h4>Imiona dla dziewczynek</h4>
+                <p>
+                    W roku 2000 najpopularniejszym imieniem dla dziewczynek była Natalia,
+                    jednak już rok później na pierwsze miejsce wysunęła się Julia i nie oddała prowadzenia przez 12 lat.
+                    W 2013 najpopularniejszym imieniem została Lena, ale już w 2015 pierwsze miejsce zgarnęła Zuzanna
+                    i prowadzi do dziś, z wyjątkiem 2017 roku, w którym to do chwały wróciła Julia.
+                
+                </p>
+                <div id="raceW" class="race position-relative"></div>
+                <button id="raceWstart" class="btn btn-success">Start</button>
+                <button id="raceWstop" class="btn btn-danger">Stop</button> 
+            </section>  
+        </article>
+        <article class="py-4">
+            <h2>O danych</h2>
+            <p>
+                Dane dotyczą imion nadawanych w Polsce w latach 2000 - 2020.
+                Pochodzą ze strony <a href="https://dane.gov.pl/dataset">https://dane.gov.pl</a>. Do roku 2012 imiona z liczbą wystąpień poniżej 5 nie były umieszczane na liście, od 2013 r. granicą tą jest liczba 2.
+                <br/>W zestawieniu można zaobserwować wpływ popkultury na nadawane imiona, np. pik dla imienia Klaudiusz w 2001 roku, po emisji pierwszej edycji Big Brothera, w której dużą popularnością cieszył się Klaudiusz Sevković.
+                <br/>Największą popularność wśród imion dla chłopców zdobył Jakub, którym w latach 2000 - 2020 nazwano aż 273618 dzieci, co stanowi 6,38% wszystkich chłopców.
+                Z kolei wśród imion dla dziewczynek najczęściej wybierano Julię - 254148 razy, czyli nazwano tak 6,19% wszystkich dziewczynek urodzonych w ostatnich dwudziestu latach.
+            </p>
+            <!-- <a href="#instruction">Przejdź do wykresu popularnośći</a> -->
+        </article>      
+    </main>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.2/c3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
     <script>
     var chart,data;
-    const years = []; for(i=2000;i<=2020;i++) years.push(i)
-    const yearsColumn = ['x']; for(y of years) yearsColumn.push(y)
+    const years = []; for(let i=2000; i<=2020; i++) years.push(i)
+    const yearsColumn = ['x']; for(let y of years) yearsColumn.push(y)
     function addOption(name){
         const opt = `<option id="${name}" value="${name}" >${name}</option>`;
         document.getElementById('selectNames').insertAdjacentHTML('beforeend',opt);
@@ -146,60 +185,38 @@
         })
     })
 
-    c3.generate({
-        bindto: '#namesNew',
-        data: {
-            x: 'name',
-            xFormat: '%Y',
-            columns: [['name','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'],
-                ['JAKUB',7.349072051,9.696426618,9.717660383,8.967060557,8.791191153,8.195207966,7.846769856,7.604767252,6.966773376,6.382508738,6.002904631,5.855582945,5.549923387,5.238200796,4.840549122,4.370972261,4.336138056,4.222377331,4.306523116,4.000321392,3.838362184],
-                ['JULIA',5.38307809,6.784997939,6.761774589,6.98353401,7.791083783,7.772292368,7.520597363,7.664508955,8.031592747,7.283529942,7.131775071,6.7657978,7.006591208,5.737263235,4.831635434,4.62043389,4.483998703,4.634105525,4.347714472,4.342983819,4.157123549],
-                ['KACPER',4.510729331,4.464253153,5.419194779,6.470540076,6.849542276,6.489472046,6.23219586,5.754295906,5.125589249,4.481096322,3.864991343,3.701305609,4.267640646,4.170321039,3.7488347,3.261132825,2.92678836,2.741644533,2.628487447,2.455130716,2.297014845]
-            ],
-            type: 'line',
-            order: null
-        },
-        axis: {
-            x: {
-                type: 'timeseries',
-                tick: {
-                    format: '%Y'
-                }
-            }
-        }
-    })
-    c3.generate({
-        bindto: '#births',
-        data: {
-            x: 'year',
-            url: 'births.csv',
-            type: 'bar',
-            types: {
-                sum: 'line'
-            },
-            groups: [
-                ['M', 'W']
-            ],
-            order: null,
-            names: {
-                M: 'chłopcy',
-                W: 'dziewczynki',
-                sum: 'suma'
-            }
-        },
-        axis: {
-            y: {
-                max: 420000,
-                tick: {
-                    values: [100000, 200000, 300000, 400000],
-                    format: d3.format("~s")
-                }
-            }
-        }
-    })
+    // c3.generate({
+    //     bindto: '#namesNew',
+    //     data: {
+    //         x: 'name',
+    //         xFormat: '%Y',
+    //         columns: [['name','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'],
+    //             ['JAKUB',7.349072051,9.696426618,9.717660383,8.967060557,8.791191153,8.195207966,7.846769856,7.604767252,6.966773376,6.382508738,6.002904631,5.855582945,5.549923387,5.238200796,4.840549122,4.370972261,4.336138056,4.222377331,4.306523116,4.000321392,3.838362184],
+    //             ['JULIA',5.38307809,6.784997939,6.761774589,6.98353401,7.791083783,7.772292368,7.520597363,7.664508955,8.031592747,7.283529942,7.131775071,6.7657978,7.006591208,5.737263235,4.831635434,4.62043389,4.483998703,4.634105525,4.347714472,4.342983819,4.157123549],
+    //             ['KACPER',4.510729331,4.464253153,5.419194779,6.470540076,6.849542276,6.489472046,6.23219586,5.754295906,5.125589249,4.481096322,3.864991343,3.701305609,4.267640646,4.170321039,3.7488347,3.261132825,2.92678836,2.741644533,2.628487447,2.455130716,2.297014845]
+    //         ],
+    //         type: 'line',
+    //         order: null
+    //     },
+    //     axis: {
+    //         x: {
+    //             type: 'timeseries',
+    //             tick: {
+    //                 format: '%Y'
+    //             }
+    //         }
+    //     }
+    // })
+    </script>
+    <script type="module">
+        import {default as births} from '/births.js'
+        import {default as race} from '/race.js'
+        births('births')
+        race('raceM', 2020)
+        race('raceW', 2020)
     </script>
 </body>
-<footer>
+<footer class="py-4">
     <ol>
         <li><a href="https://www.batory.org.pl/wp-content/uploads/2021/09/I.E.Kotowska_Zmiany.demograficzne.w.Polsce.pdf"><cite>Zmiany demograficzne w Polsce</cite> I.E. Kotowska</a></li>
         <li><a href="https://legislacja.rcl.gov.pl/docs//2/12279566/12326824/12326825/dokument206588.pdf">Rządowe uzasadnienie programu 500 plus</a></li>
