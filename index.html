@@ -115,7 +115,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
     <script>
     var chart,data;
-    const years = []; for(let i=2000; i<=2020; i++) years.push(i)
+    const years = []; for(let i=2000; i<=2021; i++) years.push(i)
     const yearsColumn = ['x']; for(let y of years) yearsColumn.push(y)
     function addOption(name){
         const opt = `<option id="${name}" value="${name}" >${name}</option>`;
@@ -134,7 +134,7 @@
     }
     function addName(name){chart.load({columns:[yearsColumn, getNameData(name)]})}
     function delName(name){chart.unload({ids: name})}
-    d3.csv('https://gist.githubusercontent.com/codestance/f9a514f4dcad8ab1e981aa322deb885f/raw/7e8b4d14df60fa493081a5155edbaa5061dbf8dd/names-given-in-poland-till-2020').then(function(dat){
+    d3.csv('https://gist.githubusercontent.com/codestance/0ae1d47de69530a8c38d50dd785a4a6c/raw/256683201d597826d39fb1cd0f0b900fd69d818a/names-given-in-poland-till-2021.csv').then(function(dat){
         data=dat;
         dat.map(d=>addOption(d.name))
         chart=c3.generate({
