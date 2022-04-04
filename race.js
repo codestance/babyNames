@@ -8,7 +8,10 @@ export default function(dataName, lastYear){
                     x: 'name',
                     value: ["value"]
                 },
-                type: 'bar'
+                type: 'bar',
+                names: {
+                    value: 'liczba'
+                }
             },
             axis: {
                 rotated: true,
