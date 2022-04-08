@@ -1,4 +1,5 @@
-export default function(dataName){
+// export default 
+function births(dataName){
     c3.generate({
         bindto: '#'+dataName,
         data: {

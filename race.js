@@ -1,4 +1,5 @@
-export default function(dataName, lastYear){
+// export default 
+function race(dataName, lastYear){
     d3.json(dataName+'.json').then(function(dat){
         let raceChart = c3.generate({
             bindto: '#'+dataName,
